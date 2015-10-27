@@ -1,7 +1,12 @@
-.thumbnail {
-    position: relative;
+.navbar{
+	min-height: 125px !important;
 }
-
-.feature {
-    text-align: center;
+.my-header{
+	background-image: url(../img/background.jpg);
+	background-position: center;
+	width: 100%;
+	position: absolute;
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-top: -2%;
 }
