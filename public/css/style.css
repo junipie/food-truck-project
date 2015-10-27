@@ -1,6 +1,15 @@
 .navbar{
 	min-height: 125px !important;
 }
+
+#brand-text{
+	font-family: 'Lobster', cursive;
+    color: #d15d39;
+    font-size: 50px;
+    padding: 0px;
+    margin-top: 5%;
+}
+
 .my-header{
 	background-image: url(../img/background.jpg);
 	background-position: center;
@@ -10,3 +19,47 @@
 	background-repeat: no-repeat;
 	margin-top: -2%;
 }
+#nav-box{
+	margin-left: 75px;
+}
+.btn-warning{
+	color: #FFF;
+	background-color: #d15d39;
+    border-color: #d15d39;
+}
+.btn-warning:hover {
+	color: #FFF;
+	background-color: #d15d39;
+    border-color: #d15d39;
+}
+.ghost{
+	background: transparent;
+	color: #F2F2F2;
+	-webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+	-o-transition: background .2s ease-in-out, border .2s ease-in-out;
+	transition: background .2s ease-in-out, border .2s ease-in-out;
+	-webkit-border-radius: 0;
+	-moz-border-radius:    0;
+	border-radius:         0;
+	width: 100%;
+	padding-top: 30px;
+    padding-bottom: 30px;
+}
+#btn-container{
+	margin-top: auto;
+	margin-bottom: auto;
+	padding:0px !important;
+}
+#btn-row{
+	width: 85%
+}
+
+.vertical-center {
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
