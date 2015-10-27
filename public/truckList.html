@@ -7,19 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 </head>
 
-<body class="body">
+<body class="body" id="truckListPage">
 
-<nav class="navbar navbar-inverse navbar-static-top">
+<nav class="navbar navbar-inverse navbar-static-top hidden-xs">
   <div class="navbar-header">
     <a class="navbar-brand" href="#">
         <img src="./img/logo_notext.png">
       </a>
       <a href="#" class="navbar-brand">
-        <h3 id="brand-text">
+        <h3 id="brand-text-md">
           Truck Yeah!
         </h3>
       </a>
@@ -38,11 +38,400 @@
   </div>
 </nav>
 
+<nav class="navbar navbar-inverse navbar-static-top hidden-sm hidden-md hidden-lg">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">
+      <img src="./img/logo_notext_sm.png">
+      </a>
+      <a href="#" class="navbar-brand">
+        <h5 id="brand-text-sm">
+          Truck Yeah!
+        </h5>
+      </a>
+    <button type="button" id="toggle-button-sm" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
 <section>
-  <div class="my-header" style="height: 100%">
+  <div class="truck-header" style="height: 100%">
+    <div class="container-fluid" id="btn-container">
+      <div class="container" id="btn-row">
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <!-- REACT COMPONENT -->
+            <div class="well clearfix">
 
-    <h3>Truck Info will render here.</h3>
+              <div class="col-sm-9 hidden-xs">
+                <h2>El Cazador</h2></br>
+                <p>A classic Missoula truck, serving delicious Mexican cuisine.</p>
+              </div>
+              <div class="col-sm-3 hidden-xs">
+                <button class="btn btn-warning ghost-list-button center-block hidden-sm hidden-xs" style="padding-left: 0px; padding-right: 0px">Learn More</button>
+                <button class="btn btn-warning ghost-list-button center-block hidden-md hidden-lg">Learn</br> More</button>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <button class="btn btn-warning ghost-list-button center-block" style="padding-left: 0px; padding-right: 0px">
+                      <i class="fa fa-facebook"></i>
+                    </button>
+                  </div>
+                  <div class="col-sm-6">
+                    <button class="btn btn-warning ghost-list-button center-block" style="padding-left: 0px; padding-right: 0px">
+                      <i class="fa fa-twitter"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
 
+
+              <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                <h2>El Cazador</h2></br>
+                <p>A classic Missoula truck, serving delicious Mexican cuisine.</p>
+              </div>
+              <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <button class="btn btn-warning ghost-list-button center-block">Learn More</button>
+                  </div>  
+                  <div class="col-xs-3">
+                    <button class="btn btn-warning ghost-list-button center-block">
+                      <i class="fa fa-facebook"></i>
+                    </button>
+                  </div>
+                  <div class="col-xs-3">
+                    <button class="btn btn-warning ghost-list-button center-block">
+                      <i class="fa fa-twitter"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END OF REACT COMPONENT -->
+
+            <!-- REACT COMPONENT -->
+            <div class="well clearfix">
+
+              <div class="col-sm-9 hidden-xs">
+                <h2>El Cazador</h2></br>
+                <p>A classic Missoula truck, serving delicious Mexican cuisine.</p>
+              </div>
+              <div class="col-sm-3 hidden-xs">
+                <button class="btn btn-warning ghost-list-button center-block hidden-sm hidden-xs" style="padding-left: 0px; padding-right: 0px">Learn More</button>
+                <button class="btn btn-warning ghost-list-button center-block hidden-md hidden-lg">Learn</br> More</button>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <button class="btn btn-warning ghost-list-button center-block" style="padding-left: 0px; padding-right: 0px">
+                      <i class="fa fa-facebook"></i>
+                    </button>
+                  </div>
+                  <div class="col-sm-6">
+                    <button class="btn btn-warning ghost-list-button center-block" style="padding-left: 0px; padding-right: 0px">
+                      <i class="fa fa-twitter"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                <h2>El Cazador</h2></br>
+                <p>A classic Missoula truck, serving delicious Mexican cuisine.</p>
+              </div>
+              <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <button class="btn btn-warning ghost-list-button center-block">Learn More</button>
+                  </div>  
+                  <div class="col-xs-3">
+                    <button class="btn btn-warning ghost-list-button center-block">
+                      <i class="fa fa-facebook"></i>
+                    </button>
+                  </div>
+                  <div class="col-xs-3">
+                    <button class="btn btn-warning ghost-list-button center-block">
+                      <i class="fa fa-twitter"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END OF REACT COMPONENT -->
+
+            <!-- REACT COMPONENT -->
+            <div class="well clearfix">
+
+              <div class="col-sm-9 hidden-xs">
+                <h2>El Cazador</h2></br>
+                <p>A classic Missoula truck, serving delicious Mexican cuisine.</p>
+              </div>
+              <div class="col-sm-3 hidden-xs">
+                <button class="btn btn-warning ghost-list-button center-block hidden-sm hidden-xs" style="padding-left: 0px; padding-right: 0px">Learn More</button>
+                <button class="btn btn-warning ghost-list-button center-block hidden-md hidden-lg">Learn</br> More</button>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <button class="btn btn-warning ghost-list-button center-block" style="padding-left: 0px; padding-right: 0px">
+                      <i class="fa fa-facebook"></i>
+                    </button>
+                  </div>
+                  <div class="col-sm-6">
+                    <button class="btn btn-warning ghost-list-button center-block" style="padding-left: 0px; padding-right: 0px">
+                      <i class="fa fa-twitter"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                <h2>El Cazador</h2></br>
+                <p>A classic Missoula truck, serving delicious Mexican cuisine.</p>
+              </div>
+              <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <button class="btn btn-warning ghost-list-button center-block">Learn More</button>
+                  </div>  
+                  <div class="col-xs-3">
+                    <button class="btn btn-warning ghost-list-button center-block">
+                      <i class="fa fa-facebook"></i>
+                    </button>
+                  </div>
+                  <div class="col-xs-3">
+                    <button class="btn btn-warning ghost-list-button center-block">
+                      <i class="fa fa-twitter"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END OF REACT COMPONENT -->
+
+            <!-- REACT COMPONENT -->
+            <div class="well clearfix">
+
+              <div class="col-sm-9 hidden-xs">
+                <h2>El Cazador</h2></br>
+                <p>A classic Missoula truck, serving delicious Mexican cuisine.</p>
+              </div>
+              <div class="col-sm-3 hidden-xs">
+                <button class="btn btn-warning ghost-list-button center-block hidden-sm hidden-xs" style="padding-left: 0px; padding-right: 0px">Learn More</button>
+                <button class="btn btn-warning ghost-list-button center-block hidden-md hidden-lg">Learn</br> More</button>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <button class="btn btn-warning ghost-list-button center-block" style="padding-left: 0px; padding-right: 0px">
+                      <i class="fa fa-facebook"></i>
+                    </button>
+                  </div>
+                  <div class="col-sm-6">
+                    <button class="btn btn-warning ghost-list-button center-block" style="padding-left: 0px; padding-right: 0px">
+                      <i class="fa fa-twitter"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                <h2>El Cazador</h2></br>
+                <p>A classic Missoula truck, serving delicious Mexican cuisine.</p>
+              </div>
+              <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <button class="btn btn-warning ghost-list-button center-block">Learn More</button>
+                  </div>  
+                  <div class="col-xs-3">
+                    <button class="btn btn-warning ghost-list-button center-block">
+                      <i class="fa fa-facebook"></i>
+                    </button>
+                  </div>
+                  <div class="col-xs-3">
+                    <button class="btn btn-warning ghost-list-button center-block">
+                      <i class="fa fa-twitter"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END OF REACT COMPONENT -->
+
+            <!-- REACT COMPONENT -->
+            <div class="well clearfix">
+
+              <div class="col-sm-9 hidden-xs">
+                <h2>El Cazador</h2></br>
+                <p>A classic Missoula truck, serving delicious Mexican cuisine.</p>
+              </div>
+              <div class="col-sm-3 hidden-xs">
+                <button class="btn btn-warning ghost-list-button center-block hidden-sm hidden-xs" style="padding-left: 0px; padding-right: 0px">Learn More</button>
+                <button class="btn btn-warning ghost-list-button center-block hidden-md hidden-lg">Learn</br> More</button>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <button class="btn btn-warning ghost-list-button center-block" style="padding-left: 0px; padding-right: 0px">
+                      <i class="fa fa-facebook"></i>
+                    </button>
+                  </div>
+                  <div class="col-sm-6">
+                    <button class="btn btn-warning ghost-list-button center-block" style="padding-left: 0px; padding-right: 0px">
+                      <i class="fa fa-twitter"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                <h2>El Cazador</h2></br>
+                <p>A classic Missoula truck, serving delicious Mexican cuisine.</p>
+              </div>
+              <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <button class="btn btn-warning ghost-list-button center-block">Learn More</button>
+                  </div>  
+                  <div class="col-xs-3">
+                    <button class="btn btn-warning ghost-list-button center-block">
+                      <i class="fa fa-facebook"></i>
+                    </button>
+                  </div>
+                  <div class="col-xs-3">
+                    <button class="btn btn-warning ghost-list-button center-block">
+                      <i class="fa fa-twitter"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END OF REACT COMPONENT -->
+
+            <!-- REACT COMPONENT -->
+            <div class="well clearfix">
+
+              <div class="col-sm-9 hidden-xs">
+                <h2>El Cazador</h2></br>
+                <p>A classic Missoula truck, serving delicious Mexican cuisine.</p>
+              </div>
+              <div class="col-sm-3 hidden-xs">
+                <button class="btn btn-warning ghost-list-button center-block hidden-sm hidden-xs" style="padding-left: 0px; padding-right: 0px">Learn More</button>
+                <button class="btn btn-warning ghost-list-button center-block hidden-md hidden-lg">Learn</br> More</button>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <button class="btn btn-warning ghost-list-button center-block" style="padding-left: 0px; padding-right: 0px">
+                      <i class="fa fa-facebook"></i>
+                    </button>
+                  </div>
+                  <div class="col-sm-6">
+                    <button class="btn btn-warning ghost-list-button center-block" style="padding-left: 0px; padding-right: 0px">
+                      <i class="fa fa-twitter"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                <h2>El Cazador</h2></br>
+                <p>A classic Missoula truck, serving delicious Mexican cuisine.</p>
+              </div>
+              <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <button class="btn btn-warning ghost-list-button center-block">Learn More</button>
+                  </div>  
+                  <div class="col-xs-3">
+                    <button class="btn btn-warning ghost-list-button center-block">
+                      <i class="fa fa-facebook"></i>
+                    </button>
+                  </div>
+                  <div class="col-xs-3">
+                    <button class="btn btn-warning ghost-list-button center-block">
+                      <i class="fa fa-twitter"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END OF REACT COMPONENT -->
+
+            <!-- REACT COMPONENT -->
+            <div class="well clearfix">
+
+              <div class="col-sm-9 hidden-xs">
+                <h2>El Cazador</h2></br>
+                <p>A classic Missoula truck, serving delicious Mexican cuisine.</p>
+              </div>
+              <div class="col-sm-3 hidden-xs">
+                <button class="btn btn-warning ghost-list-button center-block hidden-sm hidden-xs" style="padding-left: 0px; padding-right: 0px">Learn More</button>
+                <button class="btn btn-warning ghost-list-button center-block hidden-md hidden-lg">Learn</br> More</button>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <button class="btn btn-warning ghost-list-button center-block" style="padding-left: 0px; padding-right: 0px">
+                      <i class="fa fa-facebook"></i>
+                    </button>
+                  </div>
+                  <div class="col-sm-6">
+                    <button class="btn btn-warning ghost-list-button center-block" style="padding-left: 0px; padding-right: 0px">
+                      <i class="fa fa-twitter"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                <h2>El Cazador</h2></br>
+                <p>A classic Missoula truck, serving delicious Mexican cuisine.</p>
+              </div>
+              <div class="col-xs-12 hidden-sm hidden-md hidden-lg">
+                <div class="row">
+                  <div class="col-xs-6">
+                    <button class="btn btn-warning ghost-list-button center-block">Learn More</button>
+                  </div>  
+                  <div class="col-xs-3">
+                    <button class="btn btn-warning ghost-list-button center-block">
+                      <i class="fa fa-facebook"></i>
+                    </button>
+                  </div>
+                  <div class="col-xs-3">
+                    <button class="btn btn-warning ghost-list-button center-block">
+                      <i class="fa fa-twitter"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END OF REACT COMPONENT -->
+
+
+
+
+          </div>
+
+          <div class="col-lg-6 hidden-md hidden-sm hidden-xs">
+            <div style="position:fixed" class='vertical-center'>
+              <img src="./img/map.png" style="max-width:85%">
+            </div>
+          </div>
+
+          <div class="col-xs-12 hidden-lg">
+            <div style='margin-bottom: 20px'>
+              <img src="./img/map.png" class="center-block" style="max-width:100%">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 

@@ -36,7 +36,6 @@
 	position: absolute;
 	background-size: cover;
 	background-repeat: no-repeat;
-/*	margin-top: -4%;*/
 }
 #nav-box{
 	margin-left: 75px;
@@ -71,6 +70,24 @@
 	margin-bottom: auto;
 	padding:0px !important;
 }
+
+.ghost-list-button{
+    background: transparent;
+    color: #d15d39;
+    -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -ms-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+    -webkit-border-radius: 0;
+    -moz-border-radius:    0;
+    border-radius:         0;
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 #btn-row{
 	width: 85%
 }
@@ -90,6 +107,22 @@
 #toggle-button-sm{
     margin-top: 6% !important;
 }
+
+/*TRUCK LIST PAGE*/
+.truck-header{
+    margin-top: 25px;
+    width: 100%;
+    position: absolute;
+}
+
+#truckListPage {
+    background-image: url(../img/truckList_background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 
 
 /*NAV BAR STUFF*/
@@ -118,7 +151,7 @@
     .navbar-nav {
         float: none!important;
 		margin-top: 7.5px;
-        background-color: #fff;
+        background-color: #f5f5f5;
 	}
 	.navbar-nav>li {
         float: none;
