@@ -4,6 +4,7 @@
 
 .navbar-inverse{
     background-color: #fff;
+    margin-bottom: 0;
 }
 
 .navbar-inverse .navbar-toggle{
@@ -13,10 +14,17 @@
 
 }
 
-#brand-text{
+#brand-text-md{
 	font-family: 'Lobster', cursive;
     color: #d15d39;
     font-size: 50px;
+    padding: 0px;
+    margin-top: 5%;
+}
+#brand-text-sm{
+    font-family: 'Lobster', cursive;
+    color: #d15d39;
+    font-size: 35px;
     padding: 0px;
     margin-top: 5%;
 }
@@ -28,7 +36,7 @@
 	position: absolute;
 	background-size: cover;
 	background-repeat: no-repeat;
-	margin-top: -2%;
+/*	margin-top: -4%;*/
 }
 #nav-box{
 	margin-left: 75px;
@@ -74,6 +82,18 @@
   align-items: center;
 }
 
+.resp-padded{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#toggle-button-sm{
+    margin-top: 6% !important;
+}
+
+
+/*NAV BAR STUFF*/
+
 @media (max-width: 4000px) {
     .navbar-header {
         float: none;
@@ -115,7 +135,7 @@
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
     border-color: #fff;
     position: relative;
-    top: 30px;
+    top: 15px;
 }
 
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
