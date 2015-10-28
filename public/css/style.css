@@ -124,6 +124,42 @@
 }
 
 
+/*TRUCK PROFILE PAGE*/
+#truckProfilePage{
+    background-image: url(../img/truckProfile_background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.well-orange {
+    padding: 5px;
+    background-color: #d15d39;
+    border: none;
+    color: #fff;
+    width: 10%; 
+    margin-left: 10px;
+}
+
+.profile-city {
+    margin-top: -20px;
+    font-size: 35px;
+    margin-left: 20px;
+    font-weight: 100;
+    color: #fff;
+}
+
+.profile-title {
+    margin-top: -4px;
+    font-size: 75px;
+    color: #FFF;
+    margin-bottom: 0px;
+}
+
+
+
+
 
 /*NAV BAR STUFF*/
 
