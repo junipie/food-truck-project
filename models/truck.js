@@ -2,13 +2,20 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var TruckSchema = new Schema({
+
     truckName: String,
     city: String,
     description: String,
     // image: url,
     cuisine: String,
     currentLocation: String,
-    hours: Array,
+    monTime: String,
+    tuesTime: String,
+    wedTime: String,
+    thurTime: String,
+    friTime: String,
+    satTime: String,
+    sunTime: String,
     timeCategory: Array,
     payment: Array,
     foodOptions: Array,

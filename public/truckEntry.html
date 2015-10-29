@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lobster' type='text/css'>
 </head>
 
 <body class="body">
@@ -37,28 +37,28 @@
   </div>
 </nav>
 
+<!-- ***************FORM HERE**************** -->
 <div class="container-fluid">
-  <form role="form">
+  <form action="http://localhost:4000/api/trucks" method="POST" role="form">
     <h3>Truck Entry Form</h3>
-    <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
     <div class="form-group">
 
       <div class="container-fluid">
         <div class="col-md-6">
           <label>Truck Name:</label>
-          <input type="text" class="form-control" ref="truckName" placeholder="Truck Name"/>
+          <input type="text" class="form-control" name="truckName" placeholder="Truck Name"/>
         </div>
 
         <div class="col-md-6">
           <label>City:</label>
-          <input type="text" class="form-control" ref="city" placeholder="City and State of operation:"/>
+          <input type="text" class="form-control" name="city" placeholder="City and State of operation:"/>
         </div>
       </div><br/>
 
       <div class="container-fluid">
         <div class="col-md-6">
           <label>Description:</label>
-          <input type: "text" class="form-control" ref="description" placeholder="Tell us about the truck!"/>
+          <input type: "text" class="form-control" name="description" placeholder="Tell us about the truck!"/>
         </div>
 
        <!--  <div class="col-md-6">
@@ -70,12 +70,12 @@
       <div class="container-fluid">
         <div class="col-md-6">
           <label>Cuisine:</label>
-          <input type="text" class="form-control" ref="cuisine" placeholder="What type of food do you serve?"/>
+          <input type="text" class="form-control" name="cuisine" placeholder="What type of food do you serve?"/>
         </div>
 
         <div class="col-md-6">
           <label>Location:</label>
-          <input type="text" class="form-control" ref="currentLocation" placeholder="Where do you usually serve?"/>
+          <input type="text" class="form-control" name="currentLocation" placeholder="Where do you usually serve?"/>
         </div>
       </div><br/>
 
@@ -84,86 +84,65 @@
 
           <label>Hours:</label>
           <div class="row">
-            <div class="col-md-1">
+            <div class="col-md-2">
               <h5>Monday</h5>
             </div>
-            <div class="col-md-3">
-              <input type="text" class="form-control" ref="monOpen" placeholder="Open"/>
-            </div>
-            <div class="col-md-3">
-              <input type="text" class="form-control" ref="monClosed" placeholder="Closed"/>
+            <div class="col-md-5">
+              <input type="text" class="form-control" name="monTime" placeholder="open-close"/>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-md-1">
+            <div class="col-md-2">
               <h5>Tuesday</h5>
             </div>
-            <div class="col-md-3">
-              <input type="text" class="form-control" ref="tuesOpen" placeholder="Open"/>
-            </div>
-            <div class="col-md-3">
-              <input type="text" class="form-control" ref="tuesClosed" placeholder="Closed"/>
+            <div class="col-md-5">
+              <input type="text" class="form-control" name="tuesTime" placeholder="open-close"/>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-md-1">
+            <div class="col-md-2">
               <h5>Wednesday</h5>
             </div>
-            <div class="col-md-3">
-              <input type="text" class="form-control" ref="wedOpen" placeholder="Open"/>
-            </div>
-            <div class="col-md-3">
-              <input type="text" class="form-control" ref="wedClosed" placeholder="Closed"/>
+            <div class="col-md-5">
+              <input type="text" class="form-control" name="wedTime" placeholder="open-close"/>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-md-1">
+            <div class="col-md-2">
               <h5>Thursday</h5>
             </div>
-            <div class="col-md-3">
-              <input type="text" class="form-control" ref="thurOpen" placeholder="Open"/>
-            </div>
-            <div class="col-md-3">
-              <input type="text" class="form-control" ref="thurClosed" placeholder="Closed"/>
+            <div class="col-md-5">
+              <input type="text" class="form-control" name="thurTime" placeholder="open-close"/>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-md-1">
+            <div class="col-md-2">
               <h5>Friday</h5>
             </div>
-            <div class="col-md-3">
-              <input type="text" class="form-control" ref="friOpen" placeholder="Open"/>
-            </div>
-            <div class="col-md-3">
-              <input type="text" class="form-control" ref="friClosed" placeholder="Closed"/>
+            <div class="col-md-5">
+              <input type="text" class="form-control" name="friTime" placeholder="open-close"/>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-md-1">
+            <div class="col-md-2">
               <h5>Saturday</h5>
             </div>
-            <div class="col-md-3">
-              <input type="text" class="form-control" ref="satOpen" placeholder="Open"/>
-            </div>
-            <div class="col-md-3">
-              <input type="text" class="form-control" ref="satClosed" placeholder="Closed"/>
+            <div class="col-md-5">
+              <input type="text" class="form-control" name="satTime" placeholder="open-close"/>
             </div>
           </div>
 
           <div class="row">
-            <div class="col-md-1">
+            <div class="col-md-2">
               <h5>Sunday</h5>
             </div>
-            <div class="col-md-3">
-              <input type="text" class="form-control" ref="sunOpen" placeholder="Open"/>
-            </div>
-            <div class="col-md-3">
-              <input type="text" class="form-control" ref="sunClosed" placeholder="Closed"/>
+            <div class="col-md-5">
+              <input type="text" class="form-control" name="sunTime" placeholder="open-close"/>
             </div>
           </div>
 
@@ -199,18 +178,18 @@
             <div class="container-fluid">
               <div class="col-md-6">
                 <label>Facebook:</label>
-                <input type="url" class="form-control" ref="facebook" placeholder="Copy your Facebook URL here:"/>
+                <input type="text" class="form-control" name="facebook" placeholder="Copy your Facebook URL here:"/>
               </div>
 
               <div class="col-md-6">
                 <label>Twitter:</label>
-                <input type="url" class="form-control" ref="twitter" placeholder="Copy your Twitter URL here:"/>
+                <input type="text" class="form-control" name="twitter" placeholder="Copy your Twitter URL here:"/>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <button onClick="submit" class="btn btn-primary">Submit</button>                      
+      <button type="submit" class="btn btn-warning">Submit</button>                      
     </form>
   </div>
 
