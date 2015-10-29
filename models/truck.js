@@ -8,12 +8,12 @@ var TruckSchema = new Schema({
     // image: url,
     cuisine: String,
     currentLocation: String,
-    hours: array of strings,
-    timeCategory: array of strings,
-    payment: array of strings,
-    foodOptions: array of strings,
-    facebook: url,
-    twitter: url
+    hours: Array,
+    timeCategory: Array,
+    payment: Array,
+    foodOptions: Array,
+    facebook: String,
+    twitter: String
 });
 
-module.exports = mongoose.model('Blog', BlogSchema);
+module.exports = mongoose.model('Truck', TruckSchema);
