@@ -5,7 +5,7 @@ var TruckSchema = new Schema({
     truckName: String,
     city: String,
     description: String,
-    image: url,
+    // image: url,
     cuisine: String,
     currentLocation: String,
     hours: array of strings,

@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css">
-
   <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 </head>
 
@@ -19,7 +18,7 @@
         <img src="./img/logo_notext.png">
       </a>
       <a href="#" class="navbar-brand">
-        <h3 id="brand-text">
+        <h3 id="brand-text-md">
           Truck Yeah!
         </h3>
       </a>
@@ -38,99 +37,184 @@
   </div>
 </nav>
 
-<!-- <h2>Truck Entry Form</h2>
-<ol>
-    <li>truckName: String,</li>
-    <li>city: String,</li>
-    <li>description: String,</li>
-    <li>image: url,</li>
-    <li>cuisine: String,</li>
-    <li>currentLocation: String,</li>
-    <li>hours: array of strings,</li>
-    <li>timeCategory: array of strings,</li>
-    <li>payment: array of strings,</li>
-    <li>foodOptions: array of strings,</li>
-    <li>facebook: url,</li>
-    <li>twitter: url</li>
-</ol> -->
-
 <div class="container-fluid">
   <form role="form">
-    <legend>Truck Entry Form</legend>
+    <h3>Truck Entry Form</h3>
+    <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
     <div class="form-group">
 
       <div class="container-fluid">
-        <label>Truck Name:</label>
-        <input type="text" class="form-control" ref="truckName" placeholder="Truck Name"/>
-      </div>
+        <div class="col-md-6">
+          <label>Truck Name:</label>
+          <input type="text" class="form-control" ref="truckName" placeholder="Truck Name"/>
+        </div>
 
-      <div className="container-fluid">
-        <label>City:</label>
-        <input type="text" class="form-control" ref="city" placeholder="City and State of operation"/>
-      </div>
-
-      <div class="container-fluid">
-        <label>Description:</label>
-        <input type: "text" class="form-control" ref="description" placeholder="Tell us about the truck!"/>
-      </div>
+        <div class="col-md-6">
+          <label>City:</label>
+          <input type="text" class="form-control" ref="city" placeholder="City and State of operation:"/>
+        </div>
+      </div><br/>
 
       <div class="container-fluid">
-        <label>Picture:</label>
-        <input type="img" class="form-control" ref="image" placeholder="Upload a picture of your truck"/>
-      </div>
+        <div class="col-md-6">
+          <label>Description:</label>
+          <input type: "text" class="form-control" ref="description" placeholder="Tell us about the truck!"/>
+        </div>
+
+       <!--  <div class="col-md-6">
+          <label>Picture:</label>
+          <input type="image" class="form-control" ref="image" placeholder="Upload a picture of your truck"/>
+        </div> -->
+      </div><br/>
 
       <div class="container-fluid">
-        <label>Cuisine:</label>
-        <input type="text" class="form-control" ref="cuisine" placeholder="What type of food do you serve?"/>
-      </div>
+        <div class="col-md-6">
+          <label>Cuisine:</label>
+          <input type="text" class="form-control" ref="cuisine" placeholder="What type of food do you serve?"/>
+        </div>
+
+        <div class="col-md-6">
+          <label>Location:</label>
+          <input type="text" class="form-control" ref="currentLocation" placeholder="Where do you usually serve?"/>
+        </div>
+      </div><br/>
 
       <div class="container-fluid">
-        <label>Location:</label>
-        <input type="text" class="form-control" ref="currentLocation" placeholder="Where do you usually serve?"/>
+        <div class="col-md-6">
+
+          <label>Hours:</label>
+          <div class="row">
+            <div class="col-md-1">
+              <h5>Monday</h5>
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" ref="monOpen" placeholder="Open"/>
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" ref="monClosed" placeholder="Closed"/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-1">
+              <h5>Tuesday</h5>
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" ref="tuesOpen" placeholder="Open"/>
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" ref="tuesClosed" placeholder="Closed"/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-1">
+              <h5>Wednesday</h5>
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" ref="wedOpen" placeholder="Open"/>
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" ref="wedClosed" placeholder="Closed"/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-1">
+              <h5>Thursday</h5>
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" ref="thurOpen" placeholder="Open"/>
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" ref="thurClosed" placeholder="Closed"/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-1">
+              <h5>Friday</h5>
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" ref="friOpen" placeholder="Open"/>
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" ref="friClosed" placeholder="Closed"/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-1">
+              <h5>Saturday</h5>
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" ref="satOpen" placeholder="Open"/>
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" ref="satClosed" placeholder="Closed"/>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-1">
+              <h5>Sunday</h5>
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" ref="sunOpen" placeholder="Open"/>
+            </div>
+            <div class="col-md-3">
+              <input type="text" class="form-control" ref="sunClosed" placeholder="Closed"/>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-6">
+          <div>
+            <label>Category:</label><br/>
+            <input type="checkbox" name="timeCategory[]" ref="timeCategory" value="breakfast"/>Breakfast<br/>
+            <input type="checkbox" name="timeCategory[]" ref="timeCategory" value="lunch"/>Lunch<br/>
+            <input type="checkbox" name="timeCategory[]" ref="timeCategory" value="dinner"/>Dinner<br/>
+          </div><br/>
+          <div>
+            <label>Payment Options:</label><br/>
+            <input type="checkbox" name="payment[]" ref="payment" value="cash"/>Cash<br/>
+            <input type="checkbox" name="payment[]" ref="payment" value="visa"/>Visa<br/>
+            <input type="checkbox" name="payment[]" ref="payment" value="mastercard"/>Mastercard<br/>
+            <input type="checkbox" name="payment[]" ref="payment" value="amex"/>American Express<br/>
+            <input type="checkbox" name="payment[]" ref="payment" value="check"/>Checks<br/>
+          </div><br/><br/><br/>
+        </div>
+
+
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <label>Eating preference options:</label><br/>
+              <input type="checkbox" name="foodOptions[]" ref="foodOptions" value="vegan"/>Vegan<br/>
+              <input type="checkbox" name="foodOptions[]" ref="foodOptions" value="organic"/>Organic<br/>
+              <input type="checkbox" name="foodOptions[]" ref="foodOptions" value="glutenFree"/>Gluten Free<br/>
+            </div><br/>
+
+            <div class="container-fluid">
+              <div class="col-md-6">
+                <label>Facebook:</label>
+                <input type="url" class="form-control" ref="facebook" placeholder="Copy your Facebook URL here:"/>
+              </div>
+
+              <div class="col-md-6">
+                <label>Twitter:</label>
+                <input type="url" class="form-control" ref="twitter" placeholder="Copy your Twitter URL here:"/>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <button onClick="submit" class="btn btn-primary">Submit</button>                      
+    </form>
+  </div>
 
-      <div class="container-fluid">
-        <label>Hours:</label>
-        <input type="text" class="form-control" ref="hours" placeholder="What times are you open?"/>
-      </div>
-
-      <div class="container-fluid">
-        <label>Category:</label>
-        <input type="text" class="form-control" ref="timeCategory" placeholder="Are you a breakfst, lunch, or dinner truck?"/>
-      </div>
-
-      <div class="container-fluid">
-        <label>Payment:</label>
-        <input type="text" class="form-control" ref="payment" placeholder="What payment options do you provide?"/>
-      </div>
-
-      <div class="container-fluid">
-        <label>Eating preference options:</label>
-        <input type="text" class="form-control" ref="foodOptions" placeholder="What food preferences can you provide?"/>
-      </div>
-
-      <div class="container-fluid">
-        <label>Facebook:</label>
-        <input type="url" class="form-control" ref="facebook" placeholder="Copy your Facebook URL here:"/>
-      </div>
-
-      <div class="container-fluid">
-        <label>Twitter:</label>
-        <input type="url" class="form-control" ref="twitter" placeholder="Copy your Twitter URL here:"/>
-      </div>
-
-    </div>
-    <button onClick={this.handleSubmit}type="submit" class="btn btn-primary">Submit</button>                      
-  </form>
-</div>
-
-
-
-
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/1.1.1/js/md5.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
