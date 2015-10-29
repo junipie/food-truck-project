@@ -38,22 +38,95 @@
   </div>
 </nav>
 
-<h2>Truck Entry Form</h2>
+<!-- <h2>Truck Entry Form</h2>
 <ol>
-  <li>Name</li>
-  <li>Image</li>
-  <li>City</li>
-  <li>Cuisine</li>
-  <li>Current location</li>
-  <li>Hours</li>
-  <li>Category</li>
-  <li>Payment options</li>
-  <li>Food options</li>
-  <li>Operator Name</li>
-  <li>Contact Information</li>
-  <li>Facebook Profile</li>
-  <li>Twitter handle</li>
-</ol>
+    <li>truckName: String,</li>
+    <li>city: String,</li>
+    <li>description: String,</li>
+    <li>image: url,</li>
+    <li>cuisine: String,</li>
+    <li>currentLocation: String,</li>
+    <li>hours: array of strings,</li>
+    <li>timeCategory: array of strings,</li>
+    <li>payment: array of strings,</li>
+    <li>foodOptions: array of strings,</li>
+    <li>facebook: url,</li>
+    <li>twitter: url</li>
+</ol> -->
+
+<div class="container-fluid">
+  <form role="form">
+    <legend>Truck Entry Form</legend>
+    <div class="form-group">
+
+      <div class="container-fluid">
+        <label>Truck Name:</label>
+        <input type="text" class="form-control" ref="truckName" placeholder="Truck Name"/>
+      </div>
+
+      <div className="container-fluid">
+        <label>City:</label>
+        <input type="text" class="form-control" ref="city" placeholder="City and State of operation"/>
+      </div>
+
+      <div class="container-fluid">
+        <label>Description:</label>
+        <input type: "text" class="form-control" ref="description" placeholder="Tell us about the truck!"/>
+      </div>
+
+      <div class="container-fluid">
+        <label>Picture:</label>
+        <input type="img" class="form-control" ref="image" placeholder="Upload a picture of your truck"/>
+      </div>
+
+      <div class="container-fluid">
+        <label>Cuisine:</label>
+        <input type="text" class="form-control" ref="cuisine" placeholder="What type of food do you serve?"/>
+      </div>
+
+      <div class="container-fluid">
+        <label>Location:</label>
+        <input type="text" class="form-control" ref="currentLocation" placeholder="Where do you usually serve?"/>
+      </div>
+
+      <div class="container-fluid">
+        <label>Hours:</label>
+        <input type="text" class="form-control" ref="hours" placeholder="What times are you open?"/>
+      </div>
+
+      <div class="container-fluid">
+        <label>Category:</label>
+        <input type="text" class="form-control" ref="timeCategory" placeholder="Are you a breakfst, lunch, or dinner truck?"/>
+      </div>
+
+      <div class="container-fluid">
+        <label>Payment:</label>
+        <input type="text" class="form-control" ref="payment" placeholder="What payment options do you provide?"/>
+      </div>
+
+      <div class="container-fluid">
+        <label>Eating preference options:</label>
+        <input type="text" class="form-control" ref="foodOptions" placeholder="What food preferences can you provide?"/>
+      </div>
+
+      <div class="container-fluid">
+        <label>Facebook:</label>
+        <input type="url" class="form-control" ref="facebook" placeholder="Copy your Facebook URL here:"/>
+      </div>
+
+      <div class="container-fluid">
+        <label>Twitter:</label>
+        <input type="url" class="form-control" ref="twitter" placeholder="Copy your Twitter URL here:"/>
+      </div>
+
+    </div>
+    <button onClick={this.handleSubmit}type="submit" class="btn btn-primary">Submit</button>                      
+  </form>
+</div>
+
+
+
+
 
 
 
