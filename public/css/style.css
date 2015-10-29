@@ -138,7 +138,7 @@
     background-color: #d15d39;
     border: none;
     color: #fff;
-    width: 10%; 
+    width: 11%; 
     margin-left: 10px;
 }
 .well-orange-cuisine {
@@ -146,14 +146,14 @@
     background-color: #d15d39;
     border: none;
     color: #fff;
-    width: 40%;
+    width: 46%;
     margin-left: 0px;
     font-size: 20px;
 }
 
 .profile-city {
     margin-top: -20px;
-    font-size: 35px;
+    font-size: 30px;
     margin-left: 20px;
     font-weight: 100;
     color: #fff;
