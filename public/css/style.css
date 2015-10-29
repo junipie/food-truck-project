@@ -1,34 +1,3 @@
-.navbar{
-	min-height: 125px !important;
-}
-
-.navbar-inverse{
-    background-color: #fff;
-    margin-bottom: 0;
-}
-
-.navbar-inverse .navbar-toggle{
-    background-color: #d15d39 !important;
-    border-color: #fff;
-    margin-top: 3%;
-
-}
-
-#brand-text-md{
-	font-family: 'Lobster', cursive;
-    color: #d15d39;
-    font-size: 50px;
-    padding: 0px;
-    margin-top: 5%;
-}
-#brand-text-sm{
-    font-family: 'Lobster', cursive;
-    color: #d15d39;
-    font-size: 35px;
-    padding: 0px;
-    margin-top: 5%;
-}
-
 .my-header{
 	background-image: url(../img/background.jpg);
 	background-position: center;
@@ -37,9 +6,7 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 }
-#nav-box{
-	margin-left: 75px;
-}
+
 .btn-warning{
 	color: #FFF;
 	background-color: #d15d39;
@@ -50,6 +17,7 @@
 	background-color: #d15d39;
     border-color: #d15d39;
 }
+
 .ghost{
 	background: transparent;
 	color: #F2F2F2;
@@ -65,6 +33,7 @@
 	padding-top: 30px;
     padding-bottom: 30px;
 }
+
 #btn-container{
 	margin-top: auto;
 	margin-bottom: auto;
@@ -108,11 +77,79 @@
     margin-top: 6% !important;
 }
 
+
 /*TRUCK LIST PAGE*/
 .truck-header{
     margin-top: 25px;
     width: 100%;
     position: absolute;
+}
+
+.truckList-header{
+    margin-top: 25px;
+    width: 100%;
+    position: absolute;
+    height: 100%
+}
+
+.truckList-map-container-aside {
+    position: fixed; 
+    min-height: 85vh
+}
+
+.truckList-map-aside {
+    max-width:85%;
+}
+
+.truckList-map-container-below {
+    margin-bottom: 20px;
+}
+
+.truckList-map-below {
+    max-width: 100%;
+}
+
+.truckList-cuisine-med {
+    width: 75% !important; 
+    font-size: medium !important; 
+    padding: 2px !important;
+}
+
+.truckList-cuisine-sm {
+    width: 100% !important; 
+    font-size: small !important; 
+    padding: 2px !important;
+}
+
+.truckList-open-lg {
+    position: absolute; 
+    top: -20px;
+    right: -30px; 
+    width: 50%;
+}
+
+.truckList-open-md {
+	position: absolute; 
+    top: -20px; 
+    right: -40px; 
+    width: 40%;
+}
+
+.truckList-open-xs {
+    position: absolute; 
+    top: -20px; 
+    right: -40px; 
+    width: 100px;
+}
+
+.truckList-learn-md {
+    padding-left: 0px; 
+    padding-right: 0px
+}
+
+.truckList-social-responsive {
+    padding-left: 0px; 
+    padding-right: 0px
 }
 
 #truckListPage {
@@ -122,6 +159,9 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+
+
 
 
 /*TRUCK PROFILE PAGE*/
@@ -178,6 +218,41 @@ h3.white {
 
 
 /*NAV BAR STUFF*/
+
+#nav-box{
+	margin-left: 75px;
+}
+
+.navbar{
+	min-height: 125px !important;
+}
+
+.navbar-inverse{
+    background-color: #fff;
+    margin-bottom: 0;
+}
+
+.navbar-inverse .navbar-toggle{
+    background-color: #d15d39 !important;
+    border-color: #fff;
+    margin-top: 3%;
+
+}
+
+#brand-text-md{
+	font-family: 'Lobster', cursive;
+    color: #d15d39;
+    font-size: 50px;
+    padding: 0px;
+    margin-top: 5%;
+}
+#brand-text-sm{
+    font-family: 'Lobster', cursive;
+    color: #d15d39;
+    font-size: 35px;
+    padding: 0px;
+    margin-top: 5%;
+}
 
 @media (max-width: 4000px) {
     .navbar-header {
