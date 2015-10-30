@@ -1,91 +1,21 @@
 var DATA = {
-    trucks: [ 
-    {truckName: "Noodle Wagon",
+        truckName: "Noodle Wagon",
         city: "Missoula, MT",
         description: "A Friendly Asian Food Truck",
         cuisine: ["Asian"],
         currentLocation: undefined,
-        monTime: "9-5",
-        tuesTime: "9-5",
-        wedTime: "9-5",
-        thurTime: "9-5",
-        friTime: "9-5",
-        satTime: "9-5",
-        sunTime: "9-5",
-        timeCategory: undefined,
+        monTime: "Closed",
+        tuesTime: "9 - 5",
+        wedTime: "Closed",
+        thurTime: "9 - 5",
+        friTime: "9 - 5",
+        satTime: "9 - 5",
+        sunTime: "9 - 5",
+        timeCategory: "Breakfast",
         payment: undefined,
         foodOptions: ["Vegan", "Organic", "Gluten Free"],
         facebook: undefined,
-        twitter: undefined},
-    {truckName: "El Cazador",
-        city: "Missoula, MT",
-        description: "A Friendly Mexican Food Truck",
-        cuisine: ["Mexican"],
-        currentLocation: undefined,
-        monTime: "9-5",
-        tuesTime: "9-5",
-        wedTime: "9-5",
-        thurTime: "9-5",
-        friTime: "9-5",
-        satTime: "9-5",
-        sunTime: "9-5",
-        timeCategory: undefined,
-        payment: undefined,
-        foodOptions: ["Vegan", "Organic", "Gluten Free"],
-        facebook: undefined,
-        twitter: undefined},
-    {truckName: "Big Dipper",
-        city: "Missoula, MT",
-        description: "A Friendly Mexican Food Truck",
-        cuisine: ["Dessert"],
-        currentLocation: undefined,
-        monTime: "9-5",
-        tuesTime: "9-5",
-        wedTime: "9-5",
-        thurTime: "9-5",
-        friTime: "9-5",
-        satTime: "9-5",
-        sunTime: "9-5",
-        timeCategory: undefined,
-        payment: undefined,
-        foodOptions: ["Vegan", "Organic", "Gluten Free"],
-        facebook: undefined,
-        twitter: undefined},
-    {truckName: "Bob's Food Truck",
-        city: "Missoula, MT",
-        description: "A Friendly Mexican Food Truck",
-        cuisine: ["American"],
-        currentLocation: undefined,
-        monTime: "9-5",
-        tuesTime: "9-5",
-        wedTime: "9-5",
-        thurTime: "9-5",
-        friTime: "9-5",
-        satTime: "9-5",
-        sunTime: "9-5",
-        timeCategory: undefined,
-        payment: undefined,
-        foodOptions: ["Vegan", "Organic", "Gluten Free"],
-        facebook: undefined,
-        twitter: undefined},
-    {truckName: "Dobi Noodles",
-        city: "Missoula, MT",
-        description: "A Friendly Mexican Food Truck",
-        cuisine: ["Asian"],
-        currentLocation: undefined,
-        monTime: "9-5",
-        tuesTime: "9-5",
-        wedTime: "9-5",
-        thurTime: "9-5",
-        friTime: "9-5",
-        satTime: "9-5",
-        sunTime: "9-5",
-        timeCategory: undefined,
-        payment: undefined,
-        foodOptions: ["Vegan", "Organic", "Gluten Free"],
-        facebook: undefined,
-        twitter: undefined}
-            ]}
+        twitter: undefined};
 
 
 var TruckProfile = React.createClass({
@@ -102,19 +32,19 @@ var TruckProfile = React.createClass({
           </div>
 
           <div className="col-lg-9 truckPage-vert-push-sm">
-            <h1 className="profile-title">El Cazador</h1><br></br>
-            <h5 className="profile-city">Missoula, MT</h5>
+            <h1 className="profile-title">{this.props.data.truckName}</h1><br></br>
+            <h5 className="profile-city">{this.props.data.city}</h5>
             <div className="row truckPage-left-spacer-sm">
-              <div className="col-lg-1 well  well-orange text-center">Breakfast</div>
-              <div className="col-lg-1 well well-orange text-center">Dinner</div>
-              <div className="col-lg-1 well well-orange text-center">Lunch</div>
+              <div className="col-lg-1 well  well-orange text-center">{this.props.data.timeCategory}</div>
+            {/* <div className="col-lg-1 well well-orange text-center">Dinner</div>
+              <div className="col-lg-1 well well-orange text-center">Lunch</div>*/}
             </div>
           </div>
         </div>
       <div className="row">
         <div className="col-lg-3 col-lg-offset-1">
           <h3 className="white">Info</h3>
-          <p className="white">At El Cazador, located in beautiful downtown Missoula, we believe in providing a great dining experience for all of our customers. We take exceptional pride in providing the best tasting Mexican food in all of Montana. Only the freshest ingredients are used in our authentic and traditional Mexican dishes. We think of our customers as part of our family and we will make you feel welcome and right at home.</p>
+          <p className="white">{this.props.data.description}</p>
         </div>
 
         <div className="col-lg-3 col-lg-offset-1">
@@ -139,7 +69,7 @@ var TruckProfile = React.createClass({
         </div>
         <div className="col-lg-3 col-lg-offset-1">
           <h3 className="white">Cuisine</h3>
-          <div className="well well-orange-cuisine text-center">Mexican</div>
+          <div className="well well-orange-cuisine text-center">{this.props.data.cuisine[0]}</div>
           <h3 className="white">Food Options</h3>
             <img src="./img/vegan.png"/>
             <img src="./img/organic.png"/>
@@ -152,31 +82,31 @@ var TruckProfile = React.createClass({
             <table className="table"><h4>
                 <tr className="white">
                     <td>Monday</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.monTime}</td>
                 </tr>
                 <tr className="white">
                     <td>Tuesday</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.tuesTime}</td>
                 </tr>
                 <tr className="white">
                     <td>Wednesday</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.wedTime}</td>
                 </tr>
                 <tr className="white">
                     <td>Thursday</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.thurTime}</td>
                 </tr>
                 <tr className="white">
                     <td>Friday</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.friTime}</td>
                 </tr>
                 <tr className="white">
                     <td>Saturday</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.satTime}</td>
                 </tr>
                 <tr className="white">
                     <td>Sunday</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.sunTime}</td>
                 </tr>
                 
             </h4></table>
@@ -204,21 +134,21 @@ var TruckProfile = React.createClass({
               </div>
 
               <div className="col-md-7 truckPage-vert-push-sm">
-                <h1 className="profile-title">El Cazador</h1><br></br>
-                <h5 className="profile-city">Missoula, MT</h5>  
+                <h1 className="profile-title">{this.props.data.truckName}</h1><br></br>
+                <h5 className="profile-city">{this.props.data.city}</h5>  
               </div>    
 
               <div className="col-md-2">
-                  <div className="well well-orange text-center truckPage-stacking-cat-md">Breakfast</div>
-                  <div className="well well-orange text-center truckPage-stacking-cat-md">Dinner</div>
-                  <div className="well well-orange text-center truckPage-stacking-cat-md">Lunch</div>
+                  <div className="well well-orange text-center truckPage-stacking-cat-md">{this.props.data.timeCategory}</div>
+            {/* <div className="well well-orange text-center truckPage-stacking-cat-md">Dinner</div>
+                  <div className="well well-orange text-center truckPage-stacking-cat-md">Lunch</div>*/}
               </div>
           </div>
             
       <div className="row">
         <div className="col-md-11 col-md-offset-1">
           <h3 className="white">Info</h3>
-          <p className="white">At El Cazador, located in beautiful downtown Missoula, we believe in providing a great dining experience for all of our customers. We take exceptional pride in providing the best tasting Mexican food in all of Montana. Only the freshest ingredients are used in our authentic and traditional Mexican dishes. We think of our customers as part of our family and we will make you feel welcome and right at home.</p>
+          <p className="white">{this.props.data.description}</p>
         </div>
 
         <div className="col-md-3 col-md-offset-2">
@@ -243,7 +173,7 @@ var TruckProfile = React.createClass({
         </div>
         <div className="col-md-3 col-md-offset-3">
           <h3 className="white">Cuisine</h3>
-          <div className="well well-orange-cuisine text-center">Mexican</div>
+          <div className="well well-orange-cuisine text-center">{this.props.data.cuisine[0]}</div>
           <h3 className="white">Food Options</h3>
             <img src="./img/vegan.png"/>
             <img src="./img/organic.png"/>
@@ -256,31 +186,31 @@ var TruckProfile = React.createClass({
             <table className="table"><h4>
                 <tr className="white">
                     <td>Monday</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.monTime}</td>
                 </tr>
                 <tr className="white">
                     <td>Tuesday</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.tuesTime}</td>
                 </tr>
                 <tr className="white">
                     <td>Wednesday</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.wedTime}</td>
                 </tr>
                 <tr className="white">
                     <td>Thursday</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.thurTime}</td>
                 </tr>
                 <tr className="white">
                     <td>Friday</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.friTime}</td>
                 </tr>
                 <tr className="white">
                     <td>Saturday</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.satTime}</td>
                 </tr>
                 <tr className="white">
                     <td>Sunday</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.sunTime}</td>
                 </tr>
                 
             </h4></table>
@@ -308,21 +238,21 @@ var TruckProfile = React.createClass({
               </div>
 
               <div className="col-sm-7 truckPage-vert-push-sm">
-                <h1 className="profile-title-sm">El Cazador</h1><br></br>
-                <h5 className="profile-city-sm">Missoula, MT</h5>  
+                <h1 className="profile-title-sm">{this.props.data.truckName}</h1><br></br>
+                <h5 className="profile-city-sm">{this.props.data.city}</h5>  
               </div>    
 
               <div className="col-sm-2">
-                  <div className="well well-orange text-center truckPage-stacking-cat-sm">Breakfast</div>
-                  <div className="well well-orange text-center truckPage-stacking-cat-sm">Dinner</div>
-                  <div className="well well-orange text-center truckPage-stacking-cat-sm">Lunch</div>
+                  <div className="well well-orange text-center truckPage-stacking-cat-sm">{this.props.data.timeCategory}</div>
+            {/* <div className="well well-orange text-center truckPage-stacking-cat-sm">Dinner</div>
+                  <div className="well well-orange text-center truckPage-stacking-cat-sm">Lunch</div> */}
               </div>
           </div>
             
       <div className="row">
         <div className="col-sm-11 col-sm-offset-1">
           <h3 className="white">Info</h3>
-          <p className="white">At El Cazador, located in beautiful downtown Missoula, we believe in providing a great dining experience for all of our customers. We take exceptional pride in providing the best tasting Mexican food in all of Montana. Only the freshest ingredients are used in our authentic and traditional Mexican dishes. We think of our customers as part of our family and we will make you feel welcome and right at home.</p>
+          <p className="white">{this.props.data.description}</p>
         </div>
       </div>
 
@@ -349,7 +279,7 @@ var TruckProfile = React.createClass({
         </div>
         <div className="col-sm-3 col-sm-offset-3">
           <h3 className="white">Cuisine</h3>
-          <div className="well well-orange-cuisine text-center truckPage-cusine-sm">Mexican</div>
+          <div className="well well-orange-cuisine text-center truckPage-cusine-sm">{this.props.data.cuisine[0]}</div>
           <h3 className="white">Food Options</h3>
             <div className="row">
                 <div className="col-sm-4 truckPage-opt-sm">
@@ -369,32 +299,32 @@ var TruckProfile = React.createClass({
             <h3 className="white top-no-margin">Hours</h3>
             <table className="table"><h4>
                 <tr className="white">
-                    <td>Mon</td>
-                    <td>9 - 5</td>
+                    <td>Monday</td>
+                    <td>{this.props.data.monTime}</td>
                 </tr>
                 <tr className="white">
                     <td>Tues</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.tuesTime}</td>
                 </tr>
                 <tr className="white">
                     <td>Weds</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.wedTime}</td>
                 </tr>
                 <tr className="white">
                     <td>Thurs</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.thurTime}</td>
                 </tr>
                 <tr className="white">
                     <td>Fri</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.friTime}</td>
                 </tr>
                 <tr className="white">
                     <td>Sat</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.satTime}</td>
                 </tr>
                 <tr className="white">
                     <td>Sun</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.sunTime}</td>
                 </tr>
                 
             </h4></table>
@@ -421,25 +351,25 @@ var TruckProfile = React.createClass({
               </div>
 
               <div className="col-sm-7 truckPage-vert-push-sm">
-                <h1 className="profile-title text-center profile-title-sm">El Cazador</h1><br></br>
-                <h5 className="profile-city text-center profile-city-sm">Missoula, MT</h5>  
+                <h1 className="profile-title text-center profile-title-sm">{this.props.data.truckName}</h1><br></br>
+                <h5 className="profile-city text-center profile-city-sm">{this.props.data.city}</h5>  
               </div>    
 
               <div className="col-xs-4">
-                  <div className="well well-orange text-center truckPage-horiz-cat-sm">Breakfast</div>
+                  <div className="well well-orange text-center truckPage-horiz-cat-sm">{this.props.data.timeCategory}</div>
               </div>
-              <div className="col-xs-4">
+            {/* <div className="col-xs-4">
                   <div className="well well-orange text-center truckPage-horiz-cat-sm">Dinner</div>
               </div>
               <div className="col-xs-4">
                   <div className="well well-orange text-center truckPage-horiz-cat-sm">Lunch</div>
-              </div>
+              </div>*/} 
           </div>
             
       <div className="row">
         <div className="col-sm-11 col-sm-offset-1 truckPage-spacer-sm">
           <h3 className="white text-center">Info</h3>
-          <p className="white">At El Cazador, located in beautiful downtown Missoula, we believe in providing a great dining experience for all of our customers. We take exceptional pride in providing the best tasting Mexican food in all of Montana. Only the freshest ingredients are used in our authentic and traditional Mexican dishes. We think of our customers as part of our family and we will make you feel welcome and right at home.</p>
+          <p className="white">{this.props.data.description}</p>
         </div>
       </div>
 
@@ -454,7 +384,7 @@ var TruckProfile = React.createClass({
             
       <div className="row vertical-center truckPage-vh-10">
           <div className="col-xs-6">
-            <div className="well well-orange-cuisine text-center truckPage-cuisine-xs">Mexican</div>
+            <div className="well well-orange-cuisine text-center truckPage-cuisine-xs">{this.props.data.cuisine[0]}</div>
           </div>
           <div className="col-xs-6">
             <div className="row">
@@ -500,25 +430,25 @@ var TruckProfile = React.createClass({
             <table className="table"><h4>
                 <tr className="white">
                     <td>Mon</td>
-                    <td>Closed</td>
+                    <td>{this.props.data.monTime}</td>
                     <td>Fri</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.friTime}</td>
                 </tr>
                 <tr className="white">
                     <td>Tues</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.tuesTime}</td>
                     <td>Sat</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.satTime}</td>
                 </tr>
                 <tr className="white">
                     <td>Weds</td>
-                    <td>Closed</td>
+                    <td>{this.props.data.wedTime}</td>
                     <td>Sun</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.sunTime}</td>
                 </tr>
                 <tr className="white">
                     <td>Thurs</td>
-                    <td>9 - 5</td>
+                    <td>{this.props.data.thurTime}</td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -577,4 +507,4 @@ var TruckProfile = React.createClass({
 //});
 
 
-React.render(<TruckProfile/>, document.getElementById("react-box"));
+React.render(<TruckProfile data={DATA}/>, document.getElementById("react-box"));
