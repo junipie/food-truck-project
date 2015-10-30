@@ -16,7 +16,7 @@ var TruckList = React.createClass({
                       <div className="col-sm-3 hidden-xs">
                         <img src="img/openSign.png" className="hidden-md truckList-open-lg"/>
                         <img src="img/openSign.png" className="hidden-sm hidden-lg truckList-open-md"/>
-                        <button className="btn btn-warning ghost-list-button center-block hidden-sm hidden-xs truckList-learn-md">Learn More</button>
+                        <a href="truckPage.html"><button className="btn btn-warning ghost-list-button center-block hidden-sm hidden-xs truckList-learn-md">Learn More</button></a>
                         <button className="btn btn-warning ghost-list-button center-block hidden-md hidden-lg">Learn<br></br> More</button>
                         <div className="row">
                           <div className="col-sm-6">
