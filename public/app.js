@@ -1,32 +1,133 @@
-//var DATA = {
-//  title: 'University of Montana: Student Directory',
-//  items: [
-//    { id: 1, name: 'John', email: 'John@u.mt.com', gpa: 4.0 },
-//    { id: 2, name: 'Sarah', email: 'Sarah@u.mt.com', gpa: 3.0 },
-//    { id: 3, name: 'Paul', email: 'Paul@u.mt.com', gpa: 2.7 },
-//    { id: 4, name: 'Emily', email: 'Emily@u.mt.com', gpa: 2.6 },
-//    { id: 5, name: 'Derek', email: 'Derek@u.mt.com', gpa: 3.8 },
-//    { id: 6, name: 'Kathy', email: 'Kathy@u.mt.com', gpa: 3.9 },
-//    { id: 7, name: 'Brina', email: 'Brina@u.mt.com', gpa: 2.7 },
-//    { id: 8, name: 'Clare', email: 'Clare@u.mt.com', gpa: 3.6 },
-//    { id: 9, name: 'Mike', email: 'Mike@u.mt.com', gpa: 2.0 },
-//  ]
-//};
+var newTruck = {trucks: [ 
+    {truckName: "Noodle Wagon",
+        city: "Missoula, MT",
+        description: "A Friendly Asian Food Truck",
+        cuisine: ["Asian"],
+        currentLocation: undefined,
+        monTime: "9-5",
+        tuesTime: "9-5",
+        wedTime: "9-5",
+        thurTime: "9-5",
+        friTime: "9-5",
+        satTime: "9-5",
+        sunTime: "9-5",
+        timeCategory: undefined,
+        payment: undefined,
+        foodOptions: ["Vegan", "Organic", "Gluten Free"],
+        facebook: undefined,
+        twitter: undefined},
+    {truckName: "El Cazador",
+        city: "Missoula, MT",
+        description: "A Friendly Mexican Food Truck",
+        cuisine: ["Mexican"],
+        currentLocation: undefined,
+        monTime: "9-5",
+        tuesTime: "9-5",
+        wedTime: "9-5",
+        thurTime: "9-5",
+        friTime: "9-5",
+        satTime: "9-5",
+        sunTime: "9-5",
+        timeCategory: undefined,
+        payment: undefined,
+        foodOptions: ["Vegan", "Organic", "Gluten Free"],
+        facebook: undefined,
+        twitter: undefined},
+    {truckName: "Big Dipper",
+        city: "Missoula, MT",
+        description: "A Friendly Mexican Food Truck",
+        cuisine: ["Dessert"],
+        currentLocation: undefined,
+        monTime: "9-5",
+        tuesTime: "9-5",
+        wedTime: "9-5",
+        thurTime: "9-5",
+        friTime: "9-5",
+        satTime: "9-5",
+        sunTime: "9-5",
+        timeCategory: undefined,
+        payment: undefined,
+        foodOptions: ["Vegan", "Organic", "Gluten Free"],
+        facebook: undefined,
+        twitter: undefined},
+    {truckName: "Bob's Food Truck",
+        city: "Missoula, MT",
+        description: "A Friendly Mexican Food Truck",
+        cuisine: ["American"],
+        currentLocation: undefined,
+        monTime: "9-5",
+        tuesTime: "9-5",
+        wedTime: "9-5",
+        thurTime: "9-5",
+        friTime: "9-5",
+        satTime: "9-5",
+        sunTime: "9-5",
+        timeCategory: undefined,
+        payment: undefined,
+        foodOptions: ["Vegan", "Organic", "Gluten Free"],
+        facebook: undefined,
+        twitter: undefined},
+    {truckName: "Dobi Noodles",
+        city: "Missoula, MT",
+        description: "A Friendly Mexican Food Truck",
+        cuisine: ["Asian"],
+        currentLocation: undefined,
+        monTime: "9-5",
+        tuesTime: "9-5",
+        wedTime: "9-5",
+        thurTime: "9-5",
+        friTime: "9-5",
+        satTime: "9-5",
+        sunTime: "9-5",
+        timeCategory: undefined,
+        payment: undefined,
+        foodOptions: ["Vegan", "Organic", "Gluten Free"],
+        facebook: undefined,
+        twitter: undefined}
+        ]
+      }
+
+//var StudentPanels = React.createclassName({
+//    render: function() {
+//        var students = this.props.data.items.map(function(k){
+//        return (
+//				<div>
+//                   <div classNameName="col-md-4">
+//                   <div classNameName="panel panel-default">
+//                       <div classNameName="panel-heading">
+//                           <h3 classNameName="panel-title">Student {k.id}</h3>
+//                       </div>
+//                       <div classNameName="panel-body">
+//                           <p>{k.name}</p>
+//                           <p>{k.email}</p>
+//                           <p>{k.gpa}</p>
+//                       </div>
+//                   </div>
+//                   </div>
+//				</div>
+//        	)
+//    });
+//        return (
+//            <div>
+//            {students}
+//            </div>
+//            );
+//    }
+//});
+//
 
 var App = React.createClass({
     render: function() {
-        return (
-				<div>
-            
+        var trucks = this.props.data.trucks.map(function(k){
+            return (
+                <div>
+                    
                     <div className="well clearfix">
                       <div className="col-sm-9 hidden-xs">
-                        <h2>El Cazador</h2><br></br>
+                        <h2>{k.truckName}</h2><br></br>
                         <div className="row">
                             <div className='col-xs-4'>
-                                <div className="well well-orange-cuisine text-center truckList-cuisine-med">Mexican</div>
-                            </div>
-                            <div className='col-xs-4'>
-                                <div className="well well-orange-cuisine text-center truckList-cuisine-med">Asian</div>
+                                <div className="well well-orange-cuisine text-center truckList-cuisine-med">{k.cuisine[0]}</div>
                             </div>
                         </div>
                       </div>
@@ -52,13 +153,11 @@ var App = React.createClass({
             
                       <div className="col-xs-12 hidden-sm hidden-md hidden-lg">
                         <img src="img/openSign.png" className="hidden-sm truckList-open-xs"/>
-                        <h2>El Cazador</h2><br></br>
+                        <h2>{k.truckName}</h2><br></br>
                         <div className="row">
                             <div className='col-xs-4 hidden-sm hidden-md hidden-lg'>
-                                <div className="well well-orange-cuisine text-center truckList-cuisine-sm">Mexican</div>
+                                <div className="well well-orange-cuisine text-center truckList-cuisine-sm">{k.cuisine[0]}</div>
                             </div>
-                            <div className='col-xs-4 hidden-sm hidden-md hidden-lg'>
-                                <div className="well well-orange-cuisine text-center truckList-cuisine-sm">Asian</div>
                             </div>
                         </div>
                       <div className="col-xs-12 hidden-sm hidden-md hidden-lg">
@@ -80,10 +179,15 @@ var App = React.createClass({
                       </div>
                     </div>
                 </div>
-            
+            )
+        });
+        
+        return (
+				<div>
+                    {trucks}
                 </div>
         	);
     }
 });
 
-React.render(<App/>, document.getElementById('react-box'))
+React.render(<App data={newTruck}/>, document.getElementById('react-box'))
