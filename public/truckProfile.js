@@ -18,7 +18,7 @@ var DATA = {
         twitter: undefined};
 
 
-var TruckProfile = React.createClass({
+var TruckProfileLg = React.createClass({
     render: function() {
         return (
                 <div>
@@ -118,13 +118,16 @@ var TruckProfile = React.createClass({
 
       </div>
     </div>
-          
-          
-          
-          
-          
-          
-          
+            
+            </div>
+)}
+});
+
+var TruckProfileMd = React.createClass({
+    render: function() {
+        return (
+                <div>
+ 
         <div className='hidden-lg hidden-sm hidden-xs'>
           <div className="row">
               <div className="col-md-3">
@@ -222,13 +225,17 @@ var TruckProfile = React.createClass({
 
       </div>
     </div>
-          
-          
-          
-          
-          
-          
-          
+        
+                </div>
+            );
+    }
+});
+
+var TruckProfileSm = React.createClass({
+    render: function() {
+        return (
+                <div>
+ 
         <div className='hidden-xs hidden-md hidden-lg'>
           <div className="row">
               <div className="col-sm-3">
@@ -336,12 +343,17 @@ var TruckProfile = React.createClass({
 
       </div>
     </div>
-          
-          
-          
-          
-          
-          
+
+                </div>
+            );
+    }
+});
+
+var TruckProfileXs = React.createClass({
+    render: function() {
+        return (
+                <div>
+ 
         <div className='hidden-sm hidden-md hidden-lg'>
           <div className="row">
               <div className="col-sm-3">
@@ -472,39 +484,19 @@ var TruckProfile = React.createClass({
 });
 
 
-//var TruckBox = React.createClass({
-//    //Set initial state-----------------
-//    getInitialState: function(){
-//        return{data: []};
-//    },
-//    //Fetch data from our server--------------
-//    loadTrucksFromServer: function(){
-//        $.ajax({
-//            url:this.props.url,
-//            dataType:"json",
-//            cache: false,
-//            success: function(data){
-//                console.log("inside success")
-//                this.setState({data: data});
-//            }.bind(this),
-//            error: function(xhr, status, err){
-//                console.log("broken url is " + this.props.url);
-//                console.error(this.props.url, status, err.toString());
-//            }.bind(this)
-//        });
-//    },
-//    //Mount components------------------
-//    componentDidMount: function(){
-//        this.loadTrucksFromServer();
-////    },
-//    render: function() {
-//        return (
-//            <div>
-//                <TruckList data={this.state.data}/>
-//            </div>
-//        );
-//    }
-//});
+
+var TruckBox = React.createClass({
+    render: function() {
+        return (
+            <div>
+                <TruckProfileLg data={DATA}/>
+                <TruckProfileMd data={DATA}/>
+                <TruckProfileSm data={DATA}/>
+                <TruckProfileXs data={DATA}/>
+            </div>
+        );
+    }
+});
 
 
-React.render(<TruckProfile data={DATA}/>, document.getElementById("react-box"));
+React.render(<TruckBox/>, document.getElementById("react-box"));
