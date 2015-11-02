@@ -571,7 +571,7 @@ var TruckProfileXs = React.createClass({
 
 
 
-var TruckBox = React.createClass({
+var TruckProfileBox = React.createClass({
     render: function() {
         return (
             <div>
@@ -583,6 +583,3 @@ var TruckBox = React.createClass({
         );
     }
 });
-
-
-React.render(<TruckBox/>, document.getElementById("react-box"));

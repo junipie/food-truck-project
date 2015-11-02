@@ -131,7 +131,7 @@
 }
 
 .truckList-cuisine-sm {
-    width: 100% !important; 
+    width: 110% !important; 
     font-size: small !important; 
     padding: 2px !important;
 }
@@ -282,17 +282,17 @@ h3.white {
 }
 
 .money-icon-lg {
-    font-size: 6em; 
+    font-size: 6em !important; 
     margin-top: -5px;
 }
 
 .money-icon-sm {
-    font-size: 4.25em; 
+    font-size: 4.25em !important; 
     margin-top: -5px;
 }
 
 .money-icon-xs {
-    font-size: 3.5em; 
+    font-size: 3.5em !important; 
     margin-top: -5px;
 }
 
