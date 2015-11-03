@@ -1,24 +1,3 @@
-var DATA = {
-        truckName: "El Cazador",
-        city: "Missoula, MT",
-        description: "At El Cazador, located in beautiful downtown Missoula, we believe in providing a great dining experience for all of our customers.  We take exceptional pride in providing the best tasting Mexican food in all of Montana.  Only the freshest ingredients are used in our authentic and traditional Mexican dishes.  We think of our customers as part of our family and we will make you feel welcome and right at home.",
-        cuisine: ["Mexican", "American"],
-        currentLocation: undefined,
-        monTime: "Closed",
-        tuesTime: "9 - 5",
-        wedTime: "Closed",
-        thurTime: "9 - 5",
-        friTime: "9 - 5",
-        satTime: "9 - 5",
-        sunTime: "9 - 5",
-        timeCategory: ["Late Night", "Lunch"],
-        payment: ["fa fa-cc-visa fa-5x", "fa fa-cc-mastercard fa-5x", "fa fa-cc-amex fa-5x", "fa fa-money"],
-        foodOptions: ["./img/vegan.png", "./img/organic.png", "./img/glutenFree.png"],
-        facebook: undefined,
-        twitter: undefined
-      };
-
-
 var TruckProfileLg = React.createClass({
     render: function() {
         
@@ -575,10 +554,10 @@ var TruckProfileBox = React.createClass({
     render: function() {
         return (
             <div>
-                <TruckProfileLg data={DATA}/>
-                <TruckProfileMd data={DATA}/>
-                <TruckProfileSm data={DATA}/>
-                <TruckProfileXs data={DATA}/>
+                <TruckProfileLg data={this.props.data}/>
+                <TruckProfileMd data={this.props.data}/>
+                <TruckProfileSm data={this.props.data}/>
+                <TruckProfileXs data={this.props.data}/>
             </div>
         );
     }

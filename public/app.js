@@ -42,6 +42,7 @@ var MapHolderGlobal = React.createClass({
 var TruckList = React.createClass({
 
     render: function() {
+      // ACCESS THE TOGGLE FUNCTION AND ASSOCIATE IT WITH THE BUTTON
         var self = this;
         var oneTruck = this.props.data.map(function(truck){
             var cuisineLoop = truck.cuisine.map(function(cuisine){
@@ -53,6 +54,8 @@ var TruckList = React.createClass({
                 </div>
                 )
             });
+            var truckProfileID = truck._id;
+
             return (
                 <div>
                     <div className="well clearfix">
@@ -65,8 +68,8 @@ var TruckList = React.createClass({
                       <div className="col-sm-3 hidden-xs">
                         <img src="img/openSign.png" className="hidden-md truckList-open-lg"/>
                         <img src="img/openSign.png" className="hidden-sm hidden-lg truckList-open-md"/>
-                        <button onClick={self.props.toggleTruckList} className="btn btn-warning ghost-list-button center-block hidden-sm hidden-xs truckList-learn-md">Learn More</button>
-                        <button onClick={self.props.toggleTruckList} className="btn btn-warning ghost-list-button center-block hidden-md hidden-lg">Learn<br></br> More</button>
+                        <button onClick={self.props.toggleProfileID.bind(this, truckProfileID)} className="btn btn-warning ghost-list-button center-block hidden-sm hidden-xs truckList-learn-md">Learn More</button>
+                        <button onClick={self.props.toggleProfileID.bind(this, truckProfileID)} className="btn btn-warning ghost-list-button center-block hidden-md hidden-lg">Learn<br></br> More</button>
                         <div className="row">
                           <div className="col-sm-6">
                             <a href={truck.facebook}><button className="btn btn-warning ghost-list-button center-block truckList-social-responsive">
@@ -92,7 +95,7 @@ var TruckList = React.createClass({
                       <div className="col-xs-12 hidden-sm hidden-md hidden-lg">
                         <div className="row">
                           <div className="col-xs-6">
-                            <button onClick={self.props.toggleTruckList} className="btn btn-warning ghost-list-button center-block">Learn More</button>
+                            <button onClick={self.props.toggleProfileID.bind(this, truckProfileID)} className="btn btn-warning ghost-list-button center-block">Learn More</button>
                           </div>  
                           <div className="col-xs-3">
                             <a href={truck.facebook}><button className="btn btn-warning ghost-list-button center-block">
@@ -123,7 +126,7 @@ var TruckListHolder = React.createClass({
   render: function(){
     return (
         <div className="col-lg-6 col-md-12">
-          <TruckList data={this.props.data} toggleTruckList={this.props.toggleTruckList}/>
+          <TruckList data={this.props.data} toggleTruckList={this.props.toggleTruckList} toggleProfileID={this.props.toggleProfileID}/>
         </div>
       )
   }
@@ -132,13 +135,28 @@ var TruckListHolder = React.createClass({
 var TruckBox = React.createClass({
     //Set initial state-----------------
     getInitialState: function(){
-        return{data: [], truckList: true, mapHolder: true, truckProfile: false};
+        return{data: [], truckList: true, mapHolder: true, truckProfile: false, profileID: null, singleTruck: []};
     },
     toggleTruckList: function(event){
       this.setState({truckList: !this.state.truckList});
       this.setState({truckProfile: !this.state.truckProfile});
       this.setState({mapHolder: !this.state.mapHolder});
     },
+
+
+    // CREATE A TOGGLE STATE FOR TRUCK ID
+    toggleProfileID: function (id) {
+        function filterData(item){
+          return item._id === id;
+        }
+
+        var filtered = this.state.data.filter(filterData);
+
+        this.setState({singleTruck: filtered});
+
+        this.toggleTruckList();
+    },
+
     //Fetch data from our server--------------
     loadTrucksFromServer: function(){
         $.ajax({
@@ -155,14 +173,16 @@ var TruckBox = React.createClass({
             }.bind(this)
         });
     },
+
     //Mount components------------------
     componentDidMount: function(){
         this.loadTrucksFromServer();
     },
+
     render: function() {
-      var truckList = this.state.truckList ? <TruckListHolder data={this.state.data} toggleTruckList={this.toggleTruckList}/> : null
+      var truckList = this.state.truckList ? <TruckListHolder data={this.state.data} toggleTruckList={this.toggleTruckList} toggleProfileID={this.toggleProfileID}/> : null
       var mapHolder = this.state.mapHolder ? <MapHolderGlobal toggleTruckList={this.toggleTruckList}/> : null
-      var truckProfile = this.state.truckProfile ? <TruckProfileBox toggleTruckList={this.toggleTruckList}/> : null
+      var truckProfile = this.state.truckProfile ? <TruckProfileBox toggleTruckList={this.toggleTruckList} data={this.state.singleTruck[0]}/> : null
         return (
             <div>
               {truckList}

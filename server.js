@@ -8,6 +8,7 @@ var Truck = require('./models/truck');
 var mongoose = require('mongoose');
 var app = express();
 var uriUtil = require('mongodb-uri');
+var async = require('async');
 
 
 var options = {
