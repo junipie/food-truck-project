@@ -26,8 +26,18 @@ var TruckProfileLg = React.createClass({
         if (truck === moneyIcon){
           return(
             <div className="white">
-              <div className="col-lg-6">
+              <div className="col-lg-4">
                 <i className={truck + " money-icon-lg"}></i>
+              </div>
+            </div>
+            )
+        }
+          
+        else if (truck === "./img/checkbook.png"){
+            return(
+            <div className="white">
+              <div className="col-lg-4 check-left-lg">
+                <img src={truck} className="check-icon-md"></img>
               </div>
             </div>
             )
@@ -36,7 +46,7 @@ var TruckProfileLg = React.createClass({
         else{
           return(
           <div className="white">
-            <div className="col-lg-6">
+            <div className="col-lg-4">
               <i className={truck + " icon-md-sizer"}></i>
             </div>
           </div>
@@ -157,8 +167,18 @@ var TruckProfileMd = React.createClass({
         if (truck === moneyIcon){
           return(
             <div className="white">
-              <div className="col-md-6">
+              <div className="col-md-4">
                 <i className={truck + " money-icon-lg"}></i>
+              </div>
+            </div>
+            )
+        }
+          
+        else if (truck === "./img/checkbook.png"){
+            return(
+            <div className="white">
+              <div className="col-md-4 check-left-md">
+                <img src={truck} className="check-icon-md"></img>
               </div>
             </div>
             )
@@ -167,7 +187,7 @@ var TruckProfileMd = React.createClass({
         else {
           return(
             <div className="white">
-              <div className="col-md-6">
+              <div className="col-md-4">
                 <i className={truck + " icon-md-sizer"}></i>
               </div>
             </div>
@@ -185,13 +205,16 @@ var TruckProfileMd = React.createClass({
                 </a>
               </div>
 
-              <div className="col-md-7 truckPage-vert-push-sm">
-                <h1 className="profile-title">{this.props.data.truckName}</h1><br></br>
+              <div className="col-md-5 truckPage-vert-push-sm">
+                <h2 className="profile-title">{this.props.data.truckName}</h2><br></br>
                 <h5 className="profile-city">{this.props.data.city}</h5>  
               </div>    
               <div className="col-md-2">
                   <div>{categoryLoop}</div>
               </div>
+              <div className="col-md-2">
+            <button className="btn btn-warning ghost center-block back-button-lg" onClick={this.props.toggleTruckList}><h3>Back</h3></button>
+          </div> 
           </div>
             
       <div className="row">
@@ -285,14 +308,25 @@ var TruckProfileSm = React.createClass({
       });
 
       var moneyIcon = "fa fa-money";
+      var checkIcon = "./img/checkbook.png";
 
       var paymentLoop = this.props.data.payment.map(function(truck){
         
         if (truck === moneyIcon){
           return(
             <div className="white">
-              <div className="col-sm-6">
+              <div className="col-sm-4">
                 <i className={truck + " money-icon-sm"}></i>
+              </div>
+            </div>
+            )
+        }
+          
+        else if (truck === "./img/checkbook.png"){
+            return(
+            <div className="white">
+              <div className="col-sm-4 check-left-md">
+                <img src={truck} className="check-icon-sm"></img>
               </div>
             </div>
             )
@@ -301,7 +335,7 @@ var TruckProfileSm = React.createClass({
         else{
           return(
             <div className="white">
-              <div className="col-sm-6">
+              <div className="col-sm-4">
                 <i className={truck + " icon-sm-sizer"}></i>
               </div>
             </div>
@@ -319,14 +353,17 @@ var TruckProfileSm = React.createClass({
                 </a>
               </div>
 
-              <div className="col-sm-7 truckPage-vert-push-sm">
+              <div className="col-sm-5 truckPage-vert-push-sm">
                 <h1 className="profile-title-sm">{this.props.data.truckName}</h1><br></br>
                 <h5 className="profile-city-sm">{this.props.data.city}</h5>  
               </div>    
 
               <div className="col-sm-2">
-                  <div>{categoryLoop}</div>
+                  <div className="stacking-cat-sm">{categoryLoop}</div>
               </div>
+              <div className="col-sm-2">
+                  <button className="btn btn-warning ghost center-block back-button-sm" onClick={this.props.toggleTruckList}><h3>Back</h3></button>
+              </div> 
           </div>
             
       <div className="row">
@@ -337,11 +374,11 @@ var TruckProfileSm = React.createClass({
       </div>
 
       <div className="row vertical-center truckPage-vh-10">
-        <div className="col-sm-3 col-sm-offset-2">
+        <div className="col-sm-4 col-sm-offset-2">
           <h3 className="white">Payment</h3>
           <div>{paymentLoop}</div>
         </div>
-        <div className="col-sm-3 col-sm-offset-3">
+        <div className="col-sm-3 col-sm-offset-2">
           <h3 className="white">Cuisine</h3>
             <div className="row">
               <div>{cuisineLoop}</div>
@@ -432,8 +469,18 @@ var TruckProfileXs = React.createClass({
         if (truck === moneyIcon){
           return(
             <div className="white">
-              <div className="col-xs-3">
+              <div className="col-xs-4 text-center">
                 <i className={truck + " money-icon-xs"}></i>
+              </div>
+            </div>
+            )
+        }
+          
+        else if (truck === "./img/checkbook.png"){
+            return(
+            <div className="white">
+              <div className="col-xs-4 check-left-md">
+                <img src={truck} className="check-icon-xs center-block"></img>
               </div>
             </div>
             )
@@ -442,7 +489,7 @@ var TruckProfileXs = React.createClass({
         else {
           return(
             <div className="white">
-              <div className="col-xs-3">
+              <div className="col-xs-4 text-center">
                 <i className={truck + " icon-xs-sizer"}></i>
               </div>
             </div>
@@ -454,8 +501,13 @@ var TruckProfileXs = React.createClass({
         <div>
         <div className='hidden-sm hidden-md hidden-lg'>
           <div className="row">
+                <div className="col-xs-3">
+                  <button className="btn btn-warning ghost center-block back-button-sm" onClick={this.props.toggleTruckList}><i className="fa fa-chevron-left"/></button>
+              </div> 
+          </div>
+          <div className="row">
               <div className="col-sm-3">
-                <a href="#" className="thumbnail">
+                <a href="#" className="thumbnail truckPage-img-holder-sm">
                   <img src="./img/elCaz.jpg"/>
                 </a>
               </div>
@@ -500,7 +552,7 @@ var TruckProfileXs = React.createClass({
     <div className="row truckPage-vh-10">
             <div className="col-xs-12 center-block">
               <h3 className="white text-center">Payment</h3>
-              <div>{paymentLoop}</div>
+              <div className="row">{paymentLoop}</div>
             </div>
      </div>
             
