@@ -318,8 +318,35 @@ h3.white {
     margin-left: 10px;
 }
 
+.check-icon-sm{
+    width: 71px;
+    margin-top: -4px;
+}
+
+.check-icon-md{
+    width: 67px;
+    margin-top: -4px;
+}
+
+.check-icon-xs {
+    width: 62px;
+    margin-top: -4px;
+}
+
+.check-left-lg{
+    padding-left: 1.5%;
+}
+
+.check-left-md{
+    padding-left: 1.5%;
+}
+
+.check-left-sm{
+    padding-left: 2%;
+}
+
 .money-icon-lg {
-    font-size: 6em !important; 
+    font-size: 4em !important; 
     margin-top: -5px;
 }
 
@@ -342,7 +369,7 @@ h3.white {
 }
 
 .icon-md-sizer {
-    font-size: 5em !important;
+    font-size: 3.25em !important;
 }
 
 .truckPage-stacking-cat-md {
@@ -404,7 +431,6 @@ h3.white {
     max-width: 60%;
     margin-left: auto;
 }
-
 
 
 
