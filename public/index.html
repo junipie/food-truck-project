@@ -7,11 +7,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 </head>
 
-<body class="body">
-<div id="myDiv"></div>
+<body class="body" id="truckListPage">
+  
+  <nav class="navbar navbar-inverse navbar-static-top hidden-xs">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">
+        <img src="./img/logo_notext.png">
+      </a>
+      <a href="/index.html" class="navbar-brand">
+        <h3 id="brand-text-md">
+          Truck Yeah!
+        </h3>
+      </a>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/index.html">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<nav class="navbar navbar-inverse navbar-static-top hidden-sm hidden-md hidden-lg">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">
+      <img src="./img/logo_notext_sm.png">
+      </a>
+      <a href="/index.html" class="navbar-brand">
+        <h5 id="brand-text-sm">
+          Truck Yeah!
+        </h5>
+      </a>
+    <button type="button" id="toggle-button-sm" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/index.html">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+          <div id="render-here"></div>
 
 
 
@@ -22,6 +74,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+  <script type="text/jsx" src="./truckProfile.js"></script>
+  <script type="text/jsx" src="./app.js"></script>
   <script type="text/jsx" src="./main.js"></script>
 </body>
 </html>

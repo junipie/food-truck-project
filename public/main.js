@@ -1,62 +1,5 @@
-var Header = React.createClass({
-   render: function() {
-       return (
-                <div>
-                    <nav className="navbar navbar-inverse navbar-static-top hidden-xs">
-					  <div className="navbar-header">
-					    <a className="navbar-brand" href="#">
-					        <img src="./img/logo_notext.png"/>
-					      </a>
-					      <a href="/index.html" className="navbar-brand">
-					        <h3 id="brand-text-md">
-					          Truck Yeah!
-					        </h3>
-					      </a>
-					    <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					      <span className="icon-bar"></span>
-					      <span className="icon-bar"></span>
-					      <span className="icon-bar"></span>
-					    </button>
-					  </div>
-					  <div className="navbar-collapse collapse">
-					    <ul className="nav navbar-nav">
-					      <li className="active"><a href="/index.html">Home</a></li>
-					      <li><a href="#about">About</a></li>
-					      <li><a href="#contact">Contact</a></li>
-					    </ul>
-					  </div>
-					</nav>
-
-					<nav className="navbar navbar-inverse navbar-static-top hidden-sm hidden-md hidden-lg">
-					  <div className="navbar-header">
-					    <a className="navbar-brand" href="#">
-					      <img src="./img/logo_notext_sm.png"/>
-					      </a>
-					      <a href="/index.html" className="navbar-brand">
-					        <h5 id="brand-text-sm">
-					          Truck Yeah!
-					        </h5>
-					      </a>
-					    <button type="button" id="toggle-button-sm" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					      <span className="icon-bar"></span>
-					      <span className="icon-bar"></span>
-					      <span className="icon-bar"></span>
-					    </button>
-					  </div>
-					  <div className="navbar-collapse collapse">
-					    <ul className="nav navbar-nav">
-					      <li className="active"><a href="/index.html">Home</a></li>
-					      <li><a href="#about">About</a></li>
-					      <li><a href="#contact">Contact</a></li>
-					    </ul>
-					  </div>
-					</nav>
-                </div>
-       );
-   }
-});
-
 var HomeBody = React.createClass({
+
    render: function() {
        return (
                 <div>
@@ -71,12 +14,12 @@ var HomeBody = React.createClass({
 					      </div>
 					      <div className="row">
 					        <div className="col-md-3 hidden-sm hidden-xs">
-					          <button className="btn btn-warning ghost center-block" onclick="location.href='truckList.html'">
+					          <button className="btn btn-warning ghost center-block" onClick={this.props.showTrucksClick}>
 					            <h3>EAT NOW.</h3>
 					          </button>
 					        </div>
 					        <div className="col-sm-12 hidden-md hidden-lg">
-					          <button className="btn btn-warning ghost center-block resp-padded" onclick="location.href='truckList.html'">
+					          <button className="btn btn-warning ghost center-block resp-padded" onClick={this.props.showTrucksClick}>
 					            <h2>EAT NOW.</h2>
 					          </button>
 					        </div>
@@ -122,19 +65,60 @@ var HomeBody = React.createClass({
    }
 });
 
-var HomePage = React.createClass({
+var HomePageBox = React.createClass({
     render: function() {
         return (
             <div>
-            <div>
-                <Header/>
-            </div>
-            <div>
-                <HomeBody/>
-            </div>
+                <HomeBody showTrucksClick={this.props.showTrucksClick}/>
             </div>
         );
     }
 });
 
-React.render(<HomePage/>, document.body);
+var HomePageListToggle = React.createClass({
+ 	//Set Initial State
+	getInitialState: function(){
+		return {data: [], showList: false, showHome: true};
+	},
+ 	//Set toggle situation
+ 	showTrucksClick: function(){
+ 		this.setState({showList: true});
+ 		this.setState({showHome: false});
+ 	},
+
+ 	loadTrucksFromServer: function(){
+        $.ajax({
+            url:this.props.url,
+            dataType:"json",
+            cache: false,
+            success: function(data){
+                console.log("inside success")
+                this.setState({data: data});
+            }.bind(this),
+            error: function(xhr, status, err){
+                console.log("broken url is " + this.props.url);
+                console.error(this.props.url, status, err.toString());
+            }.bind(this)
+        });
+    },
+
+    //Mount components------------------
+    componentDidMount: function(){
+        this.loadTrucksFromServer();
+    },
+
+ 	//Render
+ 	render: function(){
+ 		var showTruckList = this.state.showList ? <TruckBox data={this.state.data}/> : null;
+ 		var showHomePage = this.state.showHome ? <HomePageBox showTrucksClick={this.showTrucksClick}/> : null;
+ 		console.log(this.state.data);
+ 		return(
+ 			<div>
+ 				{showHomePage}
+ 				{showTruckList}
+ 			</div>
+ 			);
+ 	}
+});
+
+React.render(<HomePageListToggle url="/api/trucks/"/>, document.getElementById("render-here"));

@@ -135,7 +135,7 @@ var TruckListHolder = React.createClass({
 var TruckBox = React.createClass({
     //Set initial state-----------------
     getInitialState: function(){
-        return{data: [], truckList: true, mapHolder: true, truckProfile: false, profileID: null, singleTruck: []};
+        return{truckList: true, mapHolder: true, truckProfile: false, profileID: null, singleTruck: []};
     },
     toggleTruckList: function(event){
       this.setState({truckList: !this.state.truckList});
@@ -150,48 +150,36 @@ var TruckBox = React.createClass({
           return item._id === id;
         }
 
-        var filtered = this.state.data.filter(filterData);
+        var filtered = this.props.data.filter(filterData);
 
         this.setState({singleTruck: filtered});
 
         this.toggleTruckList();
     },
 
-    //Fetch data from our server--------------
-    loadTrucksFromServer: function(){
-        $.ajax({
-            url:this.props.url,
-            dataType:"json",
-            cache: false,
-            success: function(data){
-                console.log("inside success")
-                this.setState({data: data});
-            }.bind(this),
-            error: function(xhr, status, err){
-                console.log("broken url is " + this.props.url);
-                console.error(this.props.url, status, err.toString());
-            }.bind(this)
-        });
-    },
-
-    //Mount components------------------
-    componentDidMount: function(){
-        this.loadTrucksFromServer();
-    },
-
     render: function() {
-      var truckList = this.state.truckList ? <TruckListHolder data={this.state.data} toggleTruckList={this.toggleTruckList} toggleProfileID={this.toggleProfileID}/> : null
+      var truckList = this.state.truckList ? <TruckListHolder data={this.props.data} toggleTruckList={this.toggleTruckList} toggleProfileID={this.toggleProfileID}/> : null
       var mapHolder = this.state.mapHolder ? <MapHolderGlobal toggleTruckList={this.toggleTruckList}/> : null
       var truckProfile = this.state.truckProfile ? <TruckProfileBox toggleTruckList={this.toggleTruckList} data={this.state.singleTruck[0]}/> : null
         return (
             <div>
-              {truckList}
-              {mapHolder}
-              {truckProfile}
+            <section>
+              <div className="truckList-header">
+                <div className="container-fluid" id="btn-container">
+                  <div className="container" id="btn-row">
+                    <div className="row">
+                        {truckList}
+                        {mapHolder}
+                        {truckProfile}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
             </div>
         );
     }
 });
 
 
-React.render(<TruckBox url="/api/trucks/"/>, document.getElementById("react-box"));
+// React.render(<TruckBox url="/api/trucks/"/>, document.getElementById("react-box"));
