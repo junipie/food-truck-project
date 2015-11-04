@@ -19,7 +19,7 @@ var TruckProfileLg = React.createClass({
           )
       });
 
-      var moneyIcon = "fa fa-money";
+      var moneyIcon = "fa fa-money"; 
 
       var paymentLoop = this.props.data.payment.map(function(truck){
 

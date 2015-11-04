@@ -1,5 +1,3 @@
-// MAP 
-
 var MapHolderLg = React.createClass({
   render: function(){
     return(
@@ -41,8 +39,6 @@ var MapHolderGlobal = React.createClass({
 });
 
 
-// TRUCK LIST
-
 var TruckList = React.createClass({
 
     render: function() {
@@ -70,7 +66,7 @@ var TruckList = React.createClass({
                         </div>
                       </div>
                       <div className="col-sm-3 hidden-xs">
-                        <img src="img/openSign.png" className="hidden-md truckList-open-xl"/>
+                        <img src="img/openSign.png" className="hidden-md truckList-open-lg"/>
                         <img src="img/openSign.png" className="hidden-sm hidden-lg truckList-open-md"/>
                         <button onClick={self.props.toggleProfileID.bind(this, truckProfileID)} className="btn btn-warning ghost-list-button center-block hidden-sm hidden-xs truckList-learn-md">Learn More</button>
                         <button onClick={self.props.toggleProfileID.bind(this, truckProfileID)} className="btn btn-warning ghost-list-button center-block hidden-md hidden-lg">Learn<br></br> More</button>
@@ -136,9 +132,6 @@ var TruckListHolder = React.createClass({
   }
 });
 
-
-// RENDER EVERYTHING
-
 var TruckBox = React.createClass({
     //Set initial state-----------------
     getInitialState: function(){
@@ -189,22 +182,4 @@ var TruckBox = React.createClass({
 });
 
 
-<<<<<<< HEAD
 // React.render(<TruckBox url="/api/trucks/"/>, document.getElementById("react-box"));
-=======
-React.render(<TruckBox url="/api/trucks/"/>, document.getElementById("react-box"));
-      
-      
-      
-// HEIRARCHY MAP
-
-//TruckBox
-    // MapHolderGlobal
-        // MapHolderLg
-        // MapHolderSm
-      
-    //TruckListHolder
-        // TruckList
-      
-    // TruckProfile (external file)
->>>>>>> 082c73a46c7c388fc41e597dd4cc4641a0e65f16
