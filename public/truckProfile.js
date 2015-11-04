@@ -19,25 +19,22 @@ var TruckProfileLg = React.createClass({
           )
       });
 
-      var moneyIcon = "fa fa-money"; 
+      var paymentLoop = this.props.data.payment.map(function(paymentOption){
 
-      var paymentLoop = this.props.data.payment.map(function(truck){
-
-        if (truck === moneyIcon){
+        if (paymentOption === "cash"){
           return(
             <div className="white">
               <div className="col-lg-4">
-                <i className={truck + " money-icon-lg"}></i>
+                <i className={"fa fa-money money-icon-lg"}></i>
               </div>
             </div>
             )
         }
-          
-        else if (truck === "./img/checkbook.png"){
+        else if (paymentOption === "checks"){
             return(
             <div className="white">
               <div className="col-lg-4 check-left-lg">
-                <img src={truck} className="check-icon-md"></img>
+                <img src="./img/checkbook.png" className="check-icon-md"></img>
               </div>
             </div>
             )
@@ -47,7 +44,7 @@ var TruckProfileLg = React.createClass({
           return(
           <div className="white">
             <div className="col-lg-4">
-              <i className={truck + " icon-md-sizer"}></i>
+              <i className={"fa fa-credit-card icon-md-sizer"}></i>
             </div>
           </div>
           )
@@ -160,25 +157,25 @@ var TruckProfileMd = React.createClass({
           )
       });
 
-      var moneyIcon = "fa fa-money";
 
-      var paymentLoop = this.props.data.payment.map(function(truck){
+      var checkIcon = "./img/checkbook.png";
+      var paymentLoop = this.props.data.payment.map(function(paymentOption){
         
-        if (truck === moneyIcon){
+        if (paymentOption === 'cash'){
           return(
             <div className="white">
               <div className="col-md-4">
-                <i className={truck + " money-icon-lg"}></i>
+                <i className="fa fa-money money-icon-lg"></i>
               </div>
             </div>
             )
         }
           
-        else if (truck === "./img/checkbook.png"){
+        else if (paymentOption === "checks"){
             return(
             <div className="white">
               <div className="col-md-4 check-left-md">
-                <img src={truck} className="check-icon-md"></img>
+                <img src={checkIcon} className="check-icon-md"></img>
               </div>
             </div>
             )
@@ -188,7 +185,7 @@ var TruckProfileMd = React.createClass({
           return(
             <div className="white">
               <div className="col-md-4">
-                <i className={truck + " icon-md-sizer"}></i>
+                <i className="fa fa-credit-card icon-md-sizer"></i>
               </div>
             </div>
             )
@@ -307,26 +304,24 @@ var TruckProfileSm = React.createClass({
           )
       });
 
-      var moneyIcon = "fa fa-money";
       var checkIcon = "./img/checkbook.png";
-
-      var paymentLoop = this.props.data.payment.map(function(truck){
+      var paymentLoop = this.props.data.payment.map(function(paymentOption){
         
-        if (truck === moneyIcon){
+        if (paymentOption === 'cash'){
           return(
             <div className="white">
               <div className="col-sm-4">
-                <i className={truck + " money-icon-sm"}></i>
+                <i className="fa fa-money money-icon-sm"></i>
               </div>
             </div>
             )
         }
           
-        else if (truck === "./img/checkbook.png"){
+        else if (paymentOption === 'checks'){
             return(
             <div className="white">
               <div className="col-sm-4 check-left-md">
-                <img src={truck} className="check-icon-sm"></img>
+                <img src={checkIcon} className="check-icon-sm"></img>
               </div>
             </div>
             )
@@ -336,7 +331,7 @@ var TruckProfileSm = React.createClass({
           return(
             <div className="white">
               <div className="col-sm-4">
-                <i className={truck + " icon-sm-sizer"}></i>
+                <i className="fa fa-credit-card icon-sm-sizer"></i>
               </div>
             </div>
             )
@@ -462,25 +457,25 @@ var TruckProfileXs = React.createClass({
           )
       });
 
-      var moneyIcon = "fa fa-money";
+      var checkIcon = "./img/checkbook.png";
 
-      var paymentLoop = this.props.data.payment.map(function(truck){
+      var paymentLoop = this.props.data.payment.map(function(paymentOption){
         
-        if (truck === moneyIcon){
+        if (paymentOption === 'cash'){
           return(
             <div className="white">
               <div className="col-xs-4 text-center">
-                <i className={truck + " money-icon-xs"}></i>
+                <i className="fa fa-money money-icon-xs"></i>
               </div>
             </div>
             )
         }
           
-        else if (truck === "./img/checkbook.png"){
+        else if (paymentOption === 'checks'){
             return(
             <div className="white">
               <div className="col-xs-4 check-left-md">
-                <img src={truck} className="check-icon-xs center-block"></img>
+                <img src={checkIcon} className="check-icon-xs center-block"></img>
               </div>
             </div>
             )
@@ -490,7 +485,7 @@ var TruckProfileXs = React.createClass({
           return(
             <div className="white">
               <div className="col-xs-4 text-center">
-                <i className={truck + " icon-xs-sizer"}></i>
+                <i className="fa fa-credit-card icon-xs-sizer"></i>
               </div>
             </div>
             )
