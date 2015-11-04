@@ -53,13 +53,16 @@ var TruckProfileLg = React.createClass({
               <img src="./img/elCaz.jpg"/>
             </a>
           </div>
-          <div className="col-lg-9 truckPage-vert-push-sm">
+          <div className="col-lg-7 truckPage-vert-push-sm">
             <h1 className="profile-title">{this.props.data.truckName}</h1><br></br>
             <h5 className="profile-city">{this.props.data.city}</h5>
             <div className="row truckPage-left-spacer-sm">
               <div>{categoryLoop}</div>
             </div>
           </div>
+          <div className="col-lg-2">
+            <button className="btn btn-warning ghost center-block back-button-lg" onClick={this.props.toggleTruckList}><h3>Back</h3></button>
+          </div> 
         </div>
       <div className="row">
         <div className="col-lg-3 col-lg-offset-1">
@@ -554,10 +557,10 @@ var TruckProfileBox = React.createClass({
     render: function() {
         return (
             <div>
-                <TruckProfileLg data={this.props.data}/>
-                <TruckProfileMd data={this.props.data}/>
-                <TruckProfileSm data={this.props.data}/>
-                <TruckProfileXs data={this.props.data}/>
+                <TruckProfileLg data={this.props.data} toggleTruckList={this.props.toggleTruckList}/>
+                <TruckProfileMd data={this.props.data} toggleTruckList={this.props.toggleTruckList}/>
+                <TruckProfileSm data={this.props.data} toggleTruckList={this.props.toggleTruckList}/>
+                <TruckProfileXs data={this.props.data} toggleTruckList={this.props.toggleTruckList}/>
             </div>
         );
     }

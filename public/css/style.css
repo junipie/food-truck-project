@@ -358,6 +358,11 @@ h3.white {
     top: -30px
 }
 
+.back-button-lg {
+    width: 50% !important;
+    padding-top: 0px !important;
+    padding-bottom: 10px !important;
+}
 
 
 
