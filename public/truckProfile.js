@@ -1,5 +1,6 @@
 var PaymentOptions = React.createClass({
   render: function() {
+    var checkIcon = "./img/checkbook.png";
     var bootstrapColumnClass = 'col-' + this.props.size + '-4';
     var paymentOptionsElement = this.props.options.map(function(paymentOption){
 
@@ -16,7 +17,7 @@ var PaymentOptions = React.createClass({
         return(
           <div className="white">
             <div className={bootstrapColumnClass + " check-left-lg"}>
-              <img src="./img/checkbook.png" className="check-icon-md"></img>
+              <img src={checkIcon} className="check-icon-md"></img>
             </div>
           </div>
         )
@@ -33,7 +34,7 @@ var PaymentOptions = React.createClass({
       }
     });
 
-    return paymentOptionsElement;
+    return <div>{paymentOptionsElement}</div>;
   }
 })
 
@@ -56,7 +57,6 @@ var TruckProfileLg = React.createClass({
           <img src={truck}></img>
           )
       });
-
 
       return (
         <div>
@@ -85,7 +85,12 @@ var TruckProfileLg = React.createClass({
         </div>
         <div className="col-lg-3 col-lg-offset-1">
           <h3 className="white">Payment</h3>
-          <div>{paymentLoop}</div>
+          <div>
+            <PaymentOptions
+              size="lg"
+              options={this.props.data.payment}
+            />
+          </div>
         </div>
         <div className="col-lg-3 col-lg-offset-1">
           <h3 className="white">Cuisine</h3>
@@ -164,41 +169,6 @@ var TruckProfileMd = React.createClass({
           )
       });
 
-
-      var checkIcon = "./img/checkbook.png";
-      var paymentLoop = this.props.data.payment.map(function(paymentOption){
-        
-        if (paymentOption === 'cash'){
-          return(
-            <div className="white">
-              <div className="col-md-4">
-                <i className="fa fa-money money-icon-lg"></i>
-              </div>
-            </div>
-            )
-        }
-          
-        else if (paymentOption === "checks"){
-            return(
-            <div className="white">
-              <div className="col-md-4 check-left-md">
-                <img src={checkIcon} className="check-icon-md"></img>
-              </div>
-            </div>
-            )
-        }
-
-        else {
-          return(
-            <div className="white">
-              <div className="col-md-4">
-                <i className="fa fa-credit-card icon-md-sizer"></i>
-              </div>
-            </div>
-            )
-        }
-      });
-
       return (
         <div>
         <div className='hidden-lg hidden-sm hidden-xs'>
@@ -229,7 +199,14 @@ var TruckProfileMd = React.createClass({
 
         <div className="col-md-3 col-md-offset-2">
           <h3 className="white">Payment</h3>
-          <div>{paymentLoop}</div>
+
+          <div>
+            <PaymentOptions
+              size="md"
+              options={this.props.data.payment}
+            />
+          </div>
+
         </div>
         <div className="col-md-3 col-md-offset-3">
           <h3 className="white">Cuisine</h3>
@@ -311,40 +288,6 @@ var TruckProfileSm = React.createClass({
           )
       });
 
-      var checkIcon = "./img/checkbook.png";
-      var paymentLoop = this.props.data.payment.map(function(paymentOption){
-        
-        if (paymentOption === 'cash'){
-          return(
-            <div className="white">
-              <div className="col-sm-4">
-                <i className="fa fa-money money-icon-sm"></i>
-              </div>
-            </div>
-            )
-        }
-          
-        else if (paymentOption === 'checks'){
-            return(
-            <div className="white">
-              <div className="col-sm-4 check-left-md">
-                <img src={checkIcon} className="check-icon-sm"></img>
-              </div>
-            </div>
-            )
-        }
-
-        else{
-          return(
-            <div className="white">
-              <div className="col-sm-4">
-                <i className="fa fa-credit-card icon-sm-sizer"></i>
-              </div>
-            </div>
-            )
-      }
-      });
-
       return (
         <div>
         <div className='hidden-xs hidden-md hidden-lg'>
@@ -378,7 +321,13 @@ var TruckProfileSm = React.createClass({
       <div className="row vertical-center truckPage-vh-10">
         <div className="col-sm-4 col-sm-offset-2">
           <h3 className="white">Payment</h3>
-          <div>{paymentLoop}</div>
+          <div>
+            <PaymentOptions
+              size="sm"
+              options={this.props.data.payment}
+            />
+          </div>
+          
         </div>
         <div className="col-sm-3 col-sm-offset-2">
           <h3 className="white">Cuisine</h3>
@@ -464,41 +413,6 @@ var TruckProfileXs = React.createClass({
           )
       });
 
-      var checkIcon = "./img/checkbook.png";
-
-      var paymentLoop = this.props.data.payment.map(function(paymentOption){
-        
-        if (paymentOption === 'cash'){
-          return(
-            <div className="white">
-              <div className="col-xs-4 text-center">
-                <i className="fa fa-money money-icon-xs"></i>
-              </div>
-            </div>
-            )
-        }
-          
-        else if (paymentOption === 'checks'){
-            return(
-            <div className="white">
-              <div className="col-xs-4 check-left-md">
-                <img src={checkIcon} className="check-icon-xs center-block"></img>
-              </div>
-            </div>
-            )
-        }
-
-        else {
-          return(
-            <div className="white">
-              <div className="col-xs-4 text-center">
-                <i className="fa fa-credit-card icon-xs-sizer"></i>
-              </div>
-            </div>
-            )
-      }
-      });
-
         return (
         <div>
         <div className='hidden-sm hidden-md hidden-lg'>
@@ -554,7 +468,12 @@ var TruckProfileXs = React.createClass({
     <div className="row truckPage-vh-10">
             <div className="col-xs-12 center-block">
               <h3 className="white text-center">Payment</h3>
-              <div className="row">{paymentLoop}</div>
+              <div className="row">
+                <PaymentOptions
+                  size="xs"
+                  options={this.props.data.payment}
+                />
+              </div>
             </div>
      </div>
             
