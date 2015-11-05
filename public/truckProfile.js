@@ -1,6 +1,44 @@
+var PaymentOptions = React.createClass({
+  render: function() {
+    var bootstrapColumnClass = 'col-' + this.props.size + '-4';
+    var paymentOptionsElement = this.props.options.map(function(paymentOption){
+
+      if (paymentOption === "cash"){
+        return(
+          <div className="white">
+            <div className={bootstrapColumnClass}>
+              <i className={"fa fa-money money-icon-lg"}></i>
+            </div>
+          </div>
+          )
+      }
+      else if (paymentOption === "checks"){
+        return(
+          <div className="white">
+            <div className={bootstrapColumnClass + " check-left-lg"}>
+              <img src="./img/checkbook.png" className="check-icon-md"></img>
+            </div>
+          </div>
+        )
+      }
+
+      else{
+        return(
+          <div className="white">
+            <div className={bootstrapColumnClass}>
+              <i className={"fa fa-credit-card icon-md-sizer"}></i>
+            </div>
+          </div>
+        )
+      }
+    });
+
+    return paymentOptionsElement;
+  }
+})
+
 var TruckProfileLg = React.createClass({
     render: function() {
-        
       var categoryLoop = this.props.data.timeCategory.map(function(truck){
         return(
           <div className="col-lg-1 well well-orange text-center">{truck}</div>
@@ -19,37 +57,6 @@ var TruckProfileLg = React.createClass({
           )
       });
 
-      var paymentLoop = this.props.data.payment.map(function(paymentOption){
-
-        if (paymentOption === "cash"){
-          return(
-            <div className="white">
-              <div className="col-lg-4">
-                <i className={"fa fa-money money-icon-lg"}></i>
-              </div>
-            </div>
-            )
-        }
-        else if (paymentOption === "checks"){
-            return(
-            <div className="white">
-              <div className="col-lg-4 check-left-lg">
-                <img src="./img/checkbook.png" className="check-icon-md"></img>
-              </div>
-            </div>
-            )
-        }
-
-        else{
-          return(
-          <div className="white">
-            <div className="col-lg-4">
-              <i className={"fa fa-credit-card icon-md-sizer"}></i>
-            </div>
-          </div>
-          )
-        }
-      });
 
       return (
         <div>
