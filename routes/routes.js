@@ -12,11 +12,17 @@ router.use(function(req, res, next) {
 router.route('/trucks')
 // POST NEW TRUCK
 	.post(function(req, res){
+        
+        function clean(value){
+            return value;
+        }
+
+    var cleanCuisine = req.body.cuisine.filter(clean);
     var newTruck = {
         truckName: req.body.truckName,
         city: req.body.city,
         description: req.body.description,
-        cuisine: req.body.cuisine,
+        cuisine: cleanCuisine,
         currentLocation: req.body.currentLocation,
         monTime: req.body.monTime,
         tuesTime: req.body.tuesTime,

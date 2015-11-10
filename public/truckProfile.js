@@ -1,27 +1,45 @@
-var DATA = {
-        truckName: "El Cazador",
-        city: "Missoula, MT",
-        description: "At El Cazador, located in beautiful downtown Missoula, we believe in providing a great dining experience for all of our customers.  We take exceptional pride in providing the best tasting Mexican food in all of Montana.  Only the freshest ingredients are used in our authentic and traditional Mexican dishes.  We think of our customers as part of our family and we will make you feel welcome and right at home.",
-        cuisine: ["Mexican", "American"],
-        currentLocation: undefined,
-        monTime: "Closed",
-        tuesTime: "9 - 5",
-        wedTime: "Closed",
-        thurTime: "9 - 5",
-        friTime: "9 - 5",
-        satTime: "9 - 5",
-        sunTime: "9 - 5",
-        timeCategory: ["Late Night", "Lunch"],
-        payment: ["fa fa-cc-visa fa-5x", "fa fa-cc-mastercard fa-5x", "fa fa-cc-amex fa-5x", "fa fa-money"],
-        foodOptions: ["./img/vegan.png", "./img/organic.png", "./img/glutenFree.png"],
-        facebook: undefined,
-        twitter: undefined
-      };
+var PaymentOptions = React.createClass({
+  render: function() {
+    var checkIcon = "./img/checkbook.png";
+    var bootstrapColumnClass = 'col-' + this.props.size + '-4';
+    var paymentOptionsElement = this.props.options.map(function(paymentOption){
 
+      if (paymentOption === "cash"){
+        return(
+          <div className="white">
+            <div className={bootstrapColumnClass}>
+              <i className={"fa fa-money money-icon-lg"}></i>
+            </div>
+          </div>
+          )
+      }
+      else if (paymentOption === "checks"){
+        return(
+          <div className="white">
+            <div className={bootstrapColumnClass + " check-left-lg"}>
+              <img src={checkIcon} className="check-icon-md"></img>
+            </div>
+          </div>
+        )
+      }
+
+      else{
+        return(
+          <div className="white">
+            <div className={bootstrapColumnClass}>
+              <i className={"fa fa-credit-card icon-md-sizer"}></i>
+            </div>
+          </div>
+        )
+      }
+    });
+
+    return <div>{paymentOptionsElement}</div>;
+  }
+})
 
 var TruckProfileLg = React.createClass({
     render: function() {
-        
       var categoryLoop = this.props.data.timeCategory.map(function(truck){
         return(
           <div className="col-lg-1 well well-orange text-center">{truck}</div>
@@ -40,31 +58,6 @@ var TruckProfileLg = React.createClass({
           )
       });
 
-      var moneyIcon = "fa fa-money";
-
-      var paymentLoop = this.props.data.payment.map(function(truck){
-
-        if (truck === moneyIcon){
-          return(
-            <div className="white">
-              <div className="col-lg-6">
-                <i className={truck + " money-icon-lg"}></i>
-              </div>
-            </div>
-            )
-        }
-
-        else{
-          return(
-          <div className="white">
-            <div className="col-lg-6">
-              <i className={truck + " icon-md-sizer"}></i>
-            </div>
-          </div>
-          )
-        }
-      });
-
       return (
         <div>
         <div className='hidden-sm hidden-xs hidden-md'>
@@ -74,13 +67,16 @@ var TruckProfileLg = React.createClass({
               <img src="./img/elCaz.jpg"/>
             </a>
           </div>
-          <div className="col-lg-9 truckPage-vert-push-sm">
+          <div className="col-lg-7 truckPage-vert-push-sm">
             <h1 className="profile-title">{this.props.data.truckName}</h1><br></br>
             <h5 className="profile-city">{this.props.data.city}</h5>
             <div className="row truckPage-left-spacer-sm">
               <div>{categoryLoop}</div>
             </div>
           </div>
+          <div className="col-lg-2">
+            <button className="btn btn-warning ghost center-block back-button-lg" onClick={this.props.toggleTruckList}><h3>Back</h3></button>
+          </div> 
         </div>
       <div className="row">
         <div className="col-lg-3 col-lg-offset-1">
@@ -89,7 +85,12 @@ var TruckProfileLg = React.createClass({
         </div>
         <div className="col-lg-3 col-lg-offset-1">
           <h3 className="white">Payment</h3>
-          <div>{paymentLoop}</div>
+          <div>
+            <PaymentOptions
+              size="lg"
+              options={this.props.data.payment}
+            />
+          </div>
         </div>
         <div className="col-lg-3 col-lg-offset-1">
           <h3 className="white">Cuisine</h3>
@@ -168,31 +169,6 @@ var TruckProfileMd = React.createClass({
           )
       });
 
-      var moneyIcon = "fa fa-money";
-
-      var paymentLoop = this.props.data.payment.map(function(truck){
-        
-        if (truck === moneyIcon){
-          return(
-            <div className="white">
-              <div className="col-md-6">
-                <i className={truck + " money-icon-lg"}></i>
-              </div>
-            </div>
-            )
-        }
-
-        else {
-          return(
-            <div className="white">
-              <div className="col-md-6">
-                <i className={truck + " icon-md-sizer"}></i>
-              </div>
-            </div>
-            )
-        }
-      });
-
       return (
         <div>
         <div className='hidden-lg hidden-sm hidden-xs'>
@@ -203,13 +179,16 @@ var TruckProfileMd = React.createClass({
                 </a>
               </div>
 
-              <div className="col-md-7 truckPage-vert-push-sm">
-                <h1 className="profile-title">{this.props.data.truckName}</h1><br></br>
+              <div className="col-md-5 truckPage-vert-push-sm">
+                <h2 className="profile-title">{this.props.data.truckName}</h2><br></br>
                 <h5 className="profile-city">{this.props.data.city}</h5>  
               </div>    
               <div className="col-md-2">
                   <div>{categoryLoop}</div>
               </div>
+              <div className="col-md-2">
+            <button className="btn btn-warning ghost center-block back-button-lg" onClick={this.props.toggleTruckList}><h3>Back</h3></button>
+          </div> 
           </div>
             
       <div className="row">
@@ -220,7 +199,14 @@ var TruckProfileMd = React.createClass({
 
         <div className="col-md-3 col-md-offset-2">
           <h3 className="white">Payment</h3>
-          <div>{paymentLoop}</div>
+
+          <div>
+            <PaymentOptions
+              size="md"
+              options={this.props.data.payment}
+            />
+          </div>
+
         </div>
         <div className="col-md-3 col-md-offset-3">
           <h3 className="white">Cuisine</h3>
@@ -302,31 +288,6 @@ var TruckProfileSm = React.createClass({
           )
       });
 
-      var moneyIcon = "fa fa-money";
-
-      var paymentLoop = this.props.data.payment.map(function(truck){
-        
-        if (truck === moneyIcon){
-          return(
-            <div className="white">
-              <div className="col-sm-6">
-                <i className={truck + " money-icon-sm"}></i>
-              </div>
-            </div>
-            )
-        }
-
-        else{
-          return(
-            <div className="white">
-              <div className="col-sm-6">
-                <i className={truck + " icon-sm-sizer"}></i>
-              </div>
-            </div>
-            )
-      }
-      });
-
       return (
         <div>
         <div className='hidden-xs hidden-md hidden-lg'>
@@ -337,14 +298,17 @@ var TruckProfileSm = React.createClass({
                 </a>
               </div>
 
-              <div className="col-sm-7 truckPage-vert-push-sm">
+              <div className="col-sm-5 truckPage-vert-push-sm">
                 <h1 className="profile-title-sm">{this.props.data.truckName}</h1><br></br>
                 <h5 className="profile-city-sm">{this.props.data.city}</h5>  
               </div>    
 
               <div className="col-sm-2">
-                  <div>{categoryLoop}</div>
+                  <div className="stacking-cat-sm">{categoryLoop}</div>
               </div>
+              <div className="col-sm-2">
+                  <button className="btn btn-warning ghost center-block back-button-sm" onClick={this.props.toggleTruckList}><h3>Back</h3></button>
+              </div> 
           </div>
             
       <div className="row">
@@ -355,11 +319,17 @@ var TruckProfileSm = React.createClass({
       </div>
 
       <div className="row vertical-center truckPage-vh-10">
-        <div className="col-sm-3 col-sm-offset-2">
+        <div className="col-sm-4 col-sm-offset-2">
           <h3 className="white">Payment</h3>
-          <div>{paymentLoop}</div>
+          <div>
+            <PaymentOptions
+              size="sm"
+              options={this.props.data.payment}
+            />
+          </div>
+          
         </div>
-        <div className="col-sm-3 col-sm-offset-3">
+        <div className="col-sm-3 col-sm-offset-2">
           <h3 className="white">Cuisine</h3>
             <div className="row">
               <div>{cuisineLoop}</div>
@@ -443,37 +413,17 @@ var TruckProfileXs = React.createClass({
           )
       });
 
-      var moneyIcon = "fa fa-money";
-
-      var paymentLoop = this.props.data.payment.map(function(truck){
-        
-        if (truck === moneyIcon){
-          return(
-            <div className="white">
-              <div className="col-xs-3">
-                <i className={truck + " money-icon-xs"}></i>
-              </div>
-            </div>
-            )
-        }
-
-        else {
-          return(
-            <div className="white">
-              <div className="col-xs-3">
-                <i className={truck + " icon-xs-sizer"}></i>
-              </div>
-            </div>
-            )
-      }
-      });
-
         return (
         <div>
         <div className='hidden-sm hidden-md hidden-lg'>
           <div className="row">
+                <div className="col-xs-3">
+                  <button className="btn btn-warning ghost center-block back-button-sm" onClick={this.props.toggleTruckList}><i className="fa fa-chevron-left"/></button>
+              </div> 
+          </div>
+          <div className="row">
               <div className="col-sm-3">
-                <a href="#" className="thumbnail">
+                <a href="#" className="thumbnail truckPage-img-holder-sm">
                   <img src="./img/elCaz.jpg"/>
                 </a>
               </div>
@@ -518,7 +468,12 @@ var TruckProfileXs = React.createClass({
     <div className="row truckPage-vh-10">
             <div className="col-xs-12 center-block">
               <h3 className="white text-center">Payment</h3>
-              <div>{paymentLoop}</div>
+              <div className="row">
+                <PaymentOptions
+                  size="xs"
+                  options={this.props.data.payment}
+                />
+              </div>
             </div>
      </div>
             
@@ -571,18 +526,15 @@ var TruckProfileXs = React.createClass({
 
 
 
-var TruckBox = React.createClass({
+var TruckProfileBox = React.createClass({
     render: function() {
         return (
             <div>
-                <TruckProfileLg data={DATA}/>
-                <TruckProfileMd data={DATA}/>
-                <TruckProfileSm data={DATA}/>
-                <TruckProfileXs data={DATA}/>
+                <TruckProfileLg data={this.props.data} toggleTruckList={this.props.toggleTruckList}/>
+                <TruckProfileMd data={this.props.data} toggleTruckList={this.props.toggleTruckList}/>
+                <TruckProfileSm data={this.props.data} toggleTruckList={this.props.toggleTruckList}/>
+                <TruckProfileXs data={this.props.data} toggleTruckList={this.props.toggleTruckList}/>
             </div>
         );
     }
 });
-
-
-React.render(<TruckBox/>, document.getElementById("react-box"));

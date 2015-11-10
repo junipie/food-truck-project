@@ -5,6 +5,7 @@
 	position: absolute;
 	background-size: cover;
 	background-repeat: no-repeat;
+    height: 100%;
 }
 
 .btn-warning{
@@ -55,6 +56,35 @@
     margin-top: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.back-button-lg {
+    width: 70%;
+    margin-top: 7%;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.back-button-sm {
+    width: 95%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+.back-button-xs {
+    width: 75%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.back-button-sm>h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.col-sm-2>.back-button-sm {
+    margin-top: 18%;
 }
 
 #btn-row{
@@ -131,7 +161,7 @@
 }
 
 .truckList-cuisine-sm {
-    width: 100% !important; 
+    width: 110% !important; 
     font-size: small !important; 
     padding: 2px !important;
 }
@@ -141,6 +171,13 @@
     top: -20px;
     right: -30px; 
     width: 50%;
+}
+
+.truckList-open-xl {
+    position: absolute; 
+    top: -20px;
+    right: -30px; 
+    width: 70px;
 }
 
 .truckList-open-md {
@@ -243,8 +280,8 @@
 }
 
 .profile-title {
-    margin-top: -4px;
-    font-size: 75px;
+    margin-top: 5px;
+    font-size: 66px;
     color: #FFF;
     margin-bottom: 0px;
 }
@@ -281,18 +318,45 @@ h3.white {
     margin-left: 10px;
 }
 
+.check-icon-sm{
+    width: 71px;
+    margin-top: -4px;
+}
+
+.check-icon-md{
+    width: 67px;
+    margin-top: -4px;
+}
+
+.check-icon-xs {
+    width: 62px;
+    margin-top: -4px;
+}
+
+.check-left-lg{
+    padding-left: 1.5%;
+}
+
+.check-left-md{
+    padding-left: 1.5%;
+}
+
+.check-left-sm{
+    padding-left: 2%;
+}
+
 .money-icon-lg {
-    font-size: 6em; 
+    font-size: 4em !important; 
     margin-top: -5px;
 }
 
 .money-icon-sm {
-    font-size: 4.25em; 
+    font-size: 4.25em !important; 
     margin-top: -5px;
 }
 
 .money-icon-xs {
-    font-size: 3.5em; 
+    font-size: 3.5em !important; 
     margin-top: -5px;
 }
 
@@ -305,7 +369,7 @@ h3.white {
 }
 
 .icon-md-sizer {
-    font-size: 5em !important;
+    font-size: 3.25em !important;
 }
 
 .truckPage-stacking-cat-md {
@@ -318,6 +382,10 @@ h3.white {
     margin-bottom:5px; 
     font-size: x-small; 
     padding: 4px;
+}
+
+.stacking-cat-sm {
+    margin-top: 9%;
 }
 
 .truckPage-horiz-cat-sm {
@@ -358,6 +426,11 @@ h3.white {
     top: -30px
 }
 
+.truckPage-img-holder-sm {
+    margin-right: auto;
+    max-width: 60%;
+    margin-left: auto;
+}
 
 
 

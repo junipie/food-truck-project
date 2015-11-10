@@ -70,7 +70,8 @@
       <div class="container-fluid">
         <div class="col-md-6">
           <label>Cuisine:</label>
-          <input type="text" class="form-control" name="cuisine" placeholder="What type of food do you serve?"/>
+          <input type="text" class="form-control" name="cuisine[]" placeholder="Food type #1"/>
+          <input type="text" class="form-control" name="cuisine[]" placeholder="Food type #2"/>
         </div>
 
         <div class="col-md-6">
@@ -156,11 +157,9 @@
           </div><br/>
           <div>
             <label>Payment Options:</label><br/>
-            <input type="checkbox" name="payment[]" ref="payment" value="fa fa-money money-icon-lg"/>Cash<br/>
-            <input type="checkbox" name="payment[]" ref="payment" value="fa fa-cc-visa fa-5x"/>Visa<br/>
-            <input type="checkbox" name="payment[]" ref="payment" value="fa fa-cc-mastercard fa-5x"/>Mastercard<br/>
-            <input type="checkbox" name="payment[]" ref="payment" value="fa fa-cc-amex fa-5x"/>American Express<br/>
-            <input type="checkbox" name="payment[]" ref="payment" value="fa-check-square-o fa-5x"/>Checks<br/>
+            <input type="checkbox" name="payment[]" ref="payment" value="cash"/>Cash<br/>
+            <input type="checkbox" name="payment[]" ref="payment" value="card"/>Card<br/>
+            <input type="checkbox" name="payment[]" ref="payment" value="checks"/>Checks<br/>
           </div><br/><br/><br/>
         </div>
 

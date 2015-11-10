@@ -8,6 +8,7 @@ var Truck = require('./models/truck');
 var mongoose = require('mongoose');
 var app = express();
 var uriUtil = require('mongodb-uri');
+var async = require('async');
 
 
 var options = {
@@ -37,39 +38,3 @@ app.get('/', function(req, res){
 
 app.listen(port);
 console.log('Magic happens on port ' + port);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var router = express.Router();
-
-
-
-
-// app.use('/', express.static(path.join(__dirname, 'public')));
-
-
-// app.get('/', function(req, res){
-// 	res.sendFile('index.html');
-// })
-
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded());
-// app.use(express.static(path.join(__dirname, 'public')));
-
-// app.set('port', process.env.PORT || 4000);
-
-// var server = app.listen(app.get('port'), function(){ 
-// 	console.log('Express server listening on port ' + server.address().port)
-// });
